@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+
+        function redirect_to_form_page(){
+            location.replace("/geri-bildirim-formu")
+        }
+
+        function redirect_to_main_page(){
+            location.replace("/ana-sayfa")
+        }
+
+        function step1(){
+
+            document.getElementById("tour-headline").innerHTML = "Edebi Zeka Nedir?"
+            document.getElementById("tour-text").innerHTML = "Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1 Metin1"
+
+            if (document.contains(document.getElementById("main-page-button"))) {
+                document.getElementById("main-page-button").remove();
+            } 
+
+            if (document.contains(document.getElementById("left-button"))){
+                document.getElementById("left-button").remove();
+            }
+
+            if (document.contains(document.getElementById("right-button"))){
+                document.getElementById("right-button").remove();
+            }
+
+            if (document.contains(document.getElementById("tour-button"))){
+                document.getElementById("tour-button").remove();
+            }
+
+            var right_button = document.getElementById("right-button");
+            if (right_button === null){
+                var right_button = document.createElement("BUTTON");
+                right_button.innerHTML = "&#8250"
+                right_button.id = "right-button"
+                right_button.classList.add("tour-button-right")
+                right_button.onclick = function() { step2(); };
+                document.getElementById("tour-container").appendChild(right_button);
+            }
+        
+        }   
+
+        function step2(){
+            document.getElementById("tour-headline").innerHTML = "Edebi Zeka'nın Var Oluş Amacı"
+            document.getElementById("tour-text").innerHTML = "Metin2 Metin2 Metin2 Metin2 Metin2 Metin2 Metin2 Metin2 Metin2 Metin2 Metin2 Metin2 Metin2 Metin2 Metin2 Metin2 Metin2"
+            document.getElementById("right-button").onclick = function() { step3(); };
+            
+            var left_button = document.getElementById("left-button");
+            if (left_button === null){
+                var left_button = document.createElement("BUTTON");
+                left_button.innerHTML = "&#8249"
+                left_button.id = "left-button"
+                left_button.classList.add("tour-button-left")
+                left_button.onclick = function() { step1(); };
+                document.getElementById("tour-container").appendChild(left_button);
+            }
+        }
+
+        function step3(){
+            document.getElementById("tour-headline").innerHTML = "Edebi Zeka'nın Çalışma Prensipleri"
+            document.getElementById("tour-text").innerHTML = "Metin3 Metin3 Metin3 Metin3 Metin3 Metin3 Metin3 Metin3 Metin3 Metin3 Metin3 Metin3 Metin3 Metin3 Metin3 Metin3 Metin3"
+            document.getElementById("right-button").onclick = function() { step4(); };
+            document.getElementById("left-button").onclick = function() { step2(); };
+        }
+
+        function step4(){
+            document.getElementById("tour-headline").innerHTML = "Edebi Zeka Neler Yapabilir?"
+            document.getElementById("tour-text").innerHTML = "Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4 Metin4"
+            document.getElementById("right-button").onclick = function() { step5(); };
+            document.getElementById("left-button").onclick = function() { step3(); };
+        }
+
+        function step5(){
+            document.getElementById("tour-headline").innerHTML = "Şimdilik bu kadar."
+            document.getElementById("tour-text").innerHTML = "Edebi Zeka'yı sevdin mi? Onu baştan tanıyabilir ya da daha detaylı inceleyip özelliklerini denemek için ana sayfaya gidebilirsin -bir göz at derim-."
+            document.getElementById("right-button").remove();
+            document.getElementById("left-button").remove();
+            var main_page_button = document.getElementById("main-page-button")
+            if (main_page_button === null){
+                var main_page_button = document.createElement("BUTTON");
+                main_page_button.innerHTML = "Ana Sayfaya Git"
+                main_page_button.id = "main-page-button"
+                main_page_button.classList.add("tour-end-button")
+                main_page_button.onclick = function() { redirect_to_main_page(); };
+                document.getElementById("tour-container").appendChild(main_page_button);
+            }
+            
+            var tour_button = document.getElementById("tour-button")
+            console.log(tour_button)
+            if (tour_button === null){
+                var tour_button = document.createElement("BUTTON");
+                tour_button.innerHTML = "Baştan Tanı"
+                tour_button.id = "tour-button"
+                tour_button.onclick = function() { step1(); };
+                tour_button.classList.add("tour-end-button")
+                document.getElementById("tour-container").appendChild(tour_button);
+            }
+        }
+
+    </script>
+    <style> 
+        body {
+            height: 100% !important;
+        }
+
+        .tour-container{
+            width: 35% !important;
+            margin-left: 35%;
+            margin-top: 12.5%;
+        }
+
+        .tour-headline{
+            font-family: "Teko", sans-serif;
+            font-size: 42px;
+        }
+
+        .tour-text{
+            font-family: "Quicksand", sans-serif;
+            font-size: 21px;
+        }
+
+        .tour-button{
+            background-color: #110e0e;
+            transition: background-color 0.25s ease-out;
+            border: none;
+            color: white;
+            padding: 10px 21px;
+            border-radius: 0%;
+            text-align: center;
+            display: inline-block;
+            font-family: "Quicksand", sans-serif;
+            font-size: 14px;
+        }
+
+        .tour-button:hover{
+            background-color: white;
+            border: 1px solid black;
+            color:#110e0e;
+            padding: 10px 21px;
+            border-radius: 0%;
+            text-align: center;
+            display: inline-block;
+            font-family: "Quicksand", sans-serif;
+            font-size: 14px;
+        }
+
+        .tour-button-right{
+            background-color: #110e0e;
+            transition: background-color 0.25s ease-out;
+            border: none;
+            color: white;
+            padding: 10px 21px;
+            border-radius: 0%;
+            text-align: center;
+            display: block;
+            font-family: "Quicksand", sans-serif;
+            font-size: 14px;
+            float: right;
+        }
+
+        .tour-button-right:hover{
+            background-color: white;
+            border: 1px solid black;
+            color:#110e0e;
+            transition: background-color 0.25s ease-out;
+            padding: 10px 21px;
+            border-radius: 0%;
+            text-align: center;
+            display: block;
+            font-family: "Quicksand", sans-serif;
+            font-size: 14px;
+            float: right;
+        }
+
+        .tour-button-left{
+            background-color: #110e0e;
+            transition: background-color 0.25s ease-out;
+            border: none;
+            color: white;
+            padding: 10px 21px;
+            border-radius: 0%;
+            text-align: center;
+            display: block;
+            font-family: "Quicksand", sans-serif;
+            font-size: 14px;
+            float: left;
+        }
+
+        .tour-button-left:hover{
+            background-color: white;
+            border: 1px solid black;
+            color:#110e0e;
+            transition: background-color 0.25s ease-out;
+            padding: 10px 21px;
+            border-radius: 0%;
+            text-align: center;
+            display: block;
+            font-family: "Quicksand", sans-serif;
+            font-size: 14px;
+            float: left;
+        }
+
+        .tour-end-button{
+            background-color: #110e0e;
+            transition: background-color 0.25s ease-out;
+            border: none;
+            color: white;
+            padding: 10px 21px;
+            border-radius: 0%;
+            text-align: center;
+            display: inline-block;
+            font-family: "Quicksand", sans-serif;
+            font-size: 14px;
+            margin-right: 3%;
+        }
+
+        .tour-end-button:hover{
+            background-color: white;
+            border: 1px solid black;
+            color:#110e0e;
+            padding: 10px 21px;
+            border-radius: 0%;
+            text-align: center;
+            display: inline-block;
+            font-family: "Quicksand", sans-serif;
+            font-size: 14px;
+            margin-right: 3%;
+        }
+    </style> 
+</head>
+<body>
+    <div class="tour-container" id="tour-container">
+        <h2 class = "tour-headline" id = "tour-headline"> Merhaba, Edebi Zeka'ya hoş geldin! </h2>
+        <p class = "tour-text", id = "tour-text"> Edebi Zeka ile tanışmak ve onun hakkında bilgi sahibi olmak ister misin? O seninle tanışmak için can atıyor! Bir saniye... Yapay zeka herhangi bir şey için can atabilir mi? Her neyse, bu başka bir tartışma konusu... Haydi gel de Edebi Zeka'ya bir göz atalım!</p>
+        <button class="tour-button" id = "tour-button" type="button" onclick="step1()">Edebi Zeka ile Tanış!</button>
+    </div>
+</body>
+</html>
