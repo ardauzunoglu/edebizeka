@@ -5,25 +5,25 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/ana-sayfa")
+@app.route("/rehber")
 def main_page():
-    return render_template("ana-sayfa.html")
+    return render_template("rehber.html")
 
 @app.route("/hakkimizda")
 def about():
     return render_template("about.html")
 
 @app.route("/siir-tahlili")
-def donem_tahmini():
+def siir_tahlili():
     return render_template("donem-tahmini.html")
 
-@app.route("/buyuk-unlu-uyumu-kontrolu")
-def buyuk_unlu_uyumu_kontrolu():
-    return render_template("buyuk-unlu-uyumu-kontrolu.html")
+@app.route("/roman-tahlili")
+def roman_tahlili():
+    return render_template("roman-tahlili.html")
 
-@app.route("/gelistirme-asamasinda-olan-ozellikler")
-def gelistirme_asamasinda_olan_ozellikler():
-    return render_template("gelistirme-asamasinda-olan-ozellikler.html")
+@app.route("/planlanan-ozellikler")
+def planlanan_ozellikler():
+    return render_template("planlanan-ozellikler.html")
 
 @app.route("/iletisim")
 def iletisim():
