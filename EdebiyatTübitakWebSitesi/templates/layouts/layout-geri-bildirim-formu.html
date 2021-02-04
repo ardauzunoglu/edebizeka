@@ -40,59 +40,37 @@
 </head>
 <body>
     {% include  "includes/navbar.html"%}
+    {% from "includes/formhelpers.html" import render_field %}
     <div class="main">
         <h2 class="headline"> 
             Edebi Zeka Geri Bildirim Formu
         </h2>
-        <form>
+        <form method="post">
             <div class="form-row">
                 <div class="col">
-                    <label for="exampleFormControlInput1">Ad: </label>
-                    <input type="text" class="form-control" placeholder="Adınız" required>
+                    {{ render_field(form.name, class="form-control") }}
                 </div>
                 <div class="col">
-                    <label for="exampleFormControlInput1">Soyad: </label>
-                    <input type="text" class="form-control" placeholder="Soyadınız" required>
+                    {{ render_field(form.surname, class="form-control") }}
                 </div>
             </div>
             <br>
             <div class="form-group">
-                <label for="exampleInputEmail1">E-posta adresi:</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ornek@eposta.com" required>
+                {{ render_field(form.email, class="form-control") }}
             </div>
             <br>
             <div class="form-row">
                 <div class="col">
-                    <label for="exampleFormControlSelect1">Edebi Zeka'ya 10 Üzerinden Kaç Puan Verirsiniz?</label>
-                    <select class="form-control" id="exampleFormControlSelect1" required>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
+                    {{ render_field(form.rating, class="form-control") }}
                     </select>
                 </div>
                 <div class="col">
-                    <label for="exampleFormControlSelect1">Edebi Zeka'da Görmek İstediğiniz Özellik</label>
-                    <select class="form-control" required>
-                        <option>Seçenek1</option>
-                        <option>Seçenek2</option>
-                        <option>Seçenek3</option>
-                        <option>Seçenek4</option>
-                        <option>Seçenek5</option>
-                        <option>Seçenek6</option>
-                    </select>
+                    {{ render_field(form.feature, class="form-control") }}
                 </div>
             </div>
             <br>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Eklemek İstedikleriniz:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="İstediğinizi yazabilirsiniz!"></textarea>
+                {{ render_field(form.extra, class="form-control") }}
                 <small style="opacity: 0.6"> Edebi Zeka'nın gelişmesine katkıda bulunduğunuz için teşekkür ederiz! </small>
             </div>
             <button class="button btn btn-dark" type="submit">Gönder</button>
