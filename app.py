@@ -10,7 +10,7 @@ age_model = joblib.load(open("templates/models/ez-donem.pkl", "rb"))
 century_model = joblib.load(open("templates/models/ez-yuzyil.pkl", "rb"))
 poet_model = joblib.load(open("templates/models/ez-sair.pkl", "rb"))
 app = Flask(__name__)
-app.config["MYSQL_HOST"] = "localhost"
+app.config["MYSQL_HOST"] = "mysql://bd1f9b1053d62f:7787d0cd@eu-cdbr-west-03.cleardb.net/heroku_5f898281b0dbf94?reconnect=true"
 app.config["MYSQL_USER"] = "root"
 app.config["MYSQL_PASSWORD"] = ""
 app.config["MYSQL_DB"] = "edebi-zeka"
