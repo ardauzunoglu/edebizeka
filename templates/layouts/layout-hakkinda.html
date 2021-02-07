@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Layout</title>
+    <style> 
+    
+        .story-box{
+            margin-left: 30%;
+            margin-right: 30%;
+            margin-top: 7.5%;
+        }
+
+        .story-headline{
+            font-size: 32px;
+            font-family: "Montserrat";
+            margin-left: 21.5%;
+        }
+        
+        .story-text{
+            margin-top: 2%;
+            font-size: 24px;
+            font-family: "Dancing Script";
+        }
+
+        .story-text-start {
+            font-size: 36px !important;
+        }
+
+    </style>
+</head>
+<body>
+    {% include  "includes/navbar.html"%}
+    <div class="story-box">
+        <h2 class="story-headline"> Edebi Zeka'nın Doğuşu: </h2>
+        <div> 
+            <p class="story-text"> 
+                <span class="story-text-start"> <strong> Edebi Zeka </strong> </span> ismine ilk olarak 2021 yılının ocak ayında bir Türk dili ve edebiyatı öğretmeni ile 10. sınıfta okuyan öğrencisinin konuşmalarında rastlanılıyor. Ortaya çıkışının 2021 Şubat ayında gerçekleştiği tahmin edilen Edebi Zeka, en basit şekilde anlatılması gerekirse modern Türk şiirinin, makine öğrenmesinin yaygın kullanım alanlarından biri olan doğal dil işleme ile birleştiği bir proje. Gün geçtikçe gelişen ve daha da sofistike hale gelen Edebi Zeka'nın ortaya çıktığı ilk dönemindeki özelliklerinin şiirde dönem ve eğilim, yüzyıl ve şair tahlili olduğuna inanılıyor. Farklı mecralara yelken açarak daha da geniş kitlelere hitap etmeyi ve büyüleyici özellikleriyle daha fazla kullanıcı çekmeyi hedeflediği düşünülen Edebi Zeka, kendine yeni özellikler katarak edebiyat ve makine öğrenmesi gibi birbirinden apayrı ancak birlikte kullanıldıklarında güzel projelerin doğmasına vesile olan iki farklı disiplinin bir araya gelmesiyle oluşan bir efsane!
+            </p>
+        </div>
+    </div>
+    {% include "includes/footer.html"%}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
