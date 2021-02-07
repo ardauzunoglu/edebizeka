@@ -41,7 +41,7 @@ class FailureFeedback(Form):
     real_output = StringField("Çıktı:", validators=[validators.Length(min=3, message="Girdiğiniz değer 3 karakterden uzun olmalı.")])
 
 
-@app.route("")
+@app.route("/")
 def index():
     return render_template("index.html")
 
