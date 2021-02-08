@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from flask.helpers import url_for
-from flask_mysqldb import MySQL
+from flask_sqlalchemy import SQLAlchemy
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from wtforms.fields.core import IntegerField
 import email_validator
@@ -10,13 +10,37 @@ age_model = joblib.load(open("templates/models/ez-donem.pkl", "rb"))
 century_model = joblib.load(open("templates/models/ez-yuzyil.pkl", "rb"))
 poet_model = joblib.load(open("templates/models/ez-sair.pkl", "rb"))
 app = Flask(__name__)
-app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = ""
-app.config["MYSQL_DB"] = "edebi-zeka"
-app.config["MYSQL_CURSORCLASS"] = "DictCursor"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://hupddegoewnnjl:1c3347df1576691bbf0f62229def1424a255337b6ee7236661a4e495a5401013@ec2-34-247-118-233.eu-west-1.compute.amazonaws.com:5432/dcvppo5ei1tbsq"
+db = SQLAlchemy(app)
 
-mysql = MySQL(app)
+class PredictionData(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    dize = db.Column(db.String(100))
+    output = db.Column(db.String(100))
+    predictor = db.Column(db.String(20))
+
+class FeedbackData(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(20))
+    surname = db.Column(db.String(30))
+    email = db.Column(db.String(150))
+    rating = db.Column(db.Integer)
+    feature = db.Column(db.String(50))
+    extra = db.Column(db.String(500))
+
+class FailureFeedbackData(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    dize = db.Column(db.String(150))
+    expected_output = db.Column(db.String(50))
+    real_output = db.Column(db.String(50))
+
+class RhymeData(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    dize1 = db.Column(db.String(150))
+    dize2 = db.Column(db.String(150))
+    dize3 = db.Column(db.String(150))
+    dize4 = db.Column(db.String(150))
+    orgu_turu = db.Column(db.String(25))
 
 class FeedbackForm(Form):
     name = StringField("Ad:", validators=[validators.Length(min=3, max=20, message="Girdiğiniz değer 3-20 arası karakter içermelidir.")])
@@ -74,12 +98,10 @@ def siirde_donem_tahmini():
         output = age_model.predict(dize_for_pred)[0]
         kazanim = donem_kazanim[output]
         predictor = "dönem"
-        cursor = mysql.connection.cursor()
-        sorgu = "Insert into tahminler(input, output, predictor) VALUES(%s,%s,%s)"
-        cursor.execute(sorgu, (dize, output, predictor))
-        mysql.connection.commit()
 
-        cursor.close()
+        new_insert = PredictionData(dize=dize, output=output, predictor=predictor)
+        db.session.add(new_insert)
+        db.session.commit()
 
         return render_template("siirde-donem-tahmini.html", pred="Edebi Zeka'nın Tahmini: " + output, pred_headline=output + " Döneminin Özellikleri", form=predict_form, not_sure="Edebi Zeka'nın hatalı tahminde bulunduğunu mu düşünüyorsun? Bize bildir!", kazanim=kazanim)
 
@@ -106,12 +128,9 @@ def siirde_yuzyil_tahmini():
         else:
             cikarim = ", ".join(cikarim).strip(",")
         predictor = "yüzyıl"
-        cursor = mysql.connection.cursor()
-        sorgu = "Insert into tahminler(input, output, predictor) VALUES(%s,%s,%s)"
-        cursor.execute(sorgu, (dize, output, predictor))
-        mysql.connection.commit()
-
-        cursor.close()
+        new_insert = PredictionData(dize=dize, output=output, predictor=predictor)
+        db.session.add(new_insert)
+        db.session.commit()
 
         return render_template("siirde-yuzyil-tahmini.html", pred="Edebi Zeka'nın Tahmini: " + output, form=predict_form, not_sure="Edebi Zeka'nın hatalı tahminde bulunduğunu mu düşünüyorsun? Bize bildir!", cikarim=output + " ile kesişen edebi dönemler: " + cikarim) 
     
@@ -180,12 +199,9 @@ def siirde_sair_tahmini():
         poet_century = poet_info[output][1]
         poet_bio = poet_info[output][2]
         predictor = "şair"
-        cursor = mysql.connection.cursor()
-        sorgu = "Insert into tahminler(input, output, predictor) VALUES(%s,%s,%s)"
-        cursor.execute(sorgu, (dize, output, predictor))
-        mysql.connection.commit()
-
-        cursor.close()
+        new_insert = PredictionData(dize=dize, output=output, predictor=predictor)
+        db.session.add(new_insert)
+        db.session.commit()
 
         return render_template("siirde-sair-tahmini.html", pred="Edebi Zeka'nın Tahmini: " + output, pred_headline = "Şaire Ait Bilgiler", form=predict_form, not_sure="Edebi Zeka'nın hatalı tahminde bulunduğunu mu düşünüyorsun? Bize bildir!", poet_age="Şairin Eser Ürettiği Dönem: " + poet_age, poet_century="Şairin Eser Ürettiği Yüzyıl: " + poet_century, poet_bio="Şairin Kısa Biyografisi: " + poet_bio) 
     
@@ -350,6 +366,7 @@ def siirde_kafiye_orgusu_tespiti():
                     index_of_dize = dizes.index(dize)
                     dize = dize.replace(char, "")
                     dizes[index_of_dize] = dize
+
         orgu_turu = None
 
         isTunc = tunc_check(dizes)
@@ -388,14 +405,11 @@ def siirde_kafiye_orgusu_tespiti():
 
         orgu_info = " ".join(orgu_info_list)
 
+        new_insert = RhymeData(dize1=dize1, dize2=dize2, dize3=dize3, dize4=dize4, orgu_turu=orgu_turu)
+        db.session.add(new_insert)
+        db.session.commit()
+
         orgu_turu = "Edebi Zeka'nın Kafiye Örgüsü Tespiti: " + " ".join(orgu_turu)
-
-        cursor = mysql.connection.cursor()
-        sorgu = "Insert into kafiye_orgusu_tespiti(dize1, dize2, dize3, dize4, tespit) VALUES(%s,%s,%s,%s,%s)"
-        cursor.execute(sorgu, (dize1, dize2, dize3, dize4, orgu_turu))
-        mysql.connection.commit()
-
-        cursor.close()
 
         return render_template("siirde-kafiye-orgusu-tespiti.html", form=rhyme_form, not_sure="Edebi Zeka'nın hatalı tahminde bulunduğunu mu düşünüyorsun? Bize bildir!", tespit=orgu_turu, orgu_info=orgu_info)
 
@@ -439,12 +453,9 @@ def ticket():
         expected_output = failure_form.expected_output.data
         real_output = failure_form.real_output.data
 
-        cursor = mysql.connection.cursor()
-        sorgu = "Insert into hata_bildirimleri(input, expected_output, real_output) VALUES(%s,%s,%s)"
-        cursor.execute(sorgu, (dize, expected_output, real_output))
-        mysql.connection.commit()
-
-        cursor.close()
+        new_insert = FailureFeedbackData(dize=dize, expected_output=expected_output, real_output=real_output)
+        db.session.add(new_insert)
+        db.session.commit()
 
         return redirect(url_for("tesekkurler"))
 
@@ -464,15 +475,14 @@ def geri_bildirim_formu():
         feature = form.feature.data
         extra = form.extra.data
 
-        cursor = mysql.connection.cursor()
-        sorgu = "Insert into geri_bildirim_formu(name,surname,email,rating,feature,extra) VALUES(%s,%s,%s,%s,%s,%s)"
-        cursor.execute(sorgu, (name,surname,email,rating,feature,extra))
-        mysql.connection.commit()
+        new_insert = FeedbackData(name=name, surname=surname, email=email, rating=rating, feature=feature, extra=extra)
+        db.session.add(new_insert)
+        db.session.commit()
 
-        cursor.close()
         return redirect(url_for("tesekkurler"))
 
     else:
         return render_template("geri-bildirim-formu.html", form = form)
 if __name__ == "__main__":
+    db.create_all()
     app.run(debug=True)
