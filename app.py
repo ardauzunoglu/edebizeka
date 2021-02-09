@@ -204,7 +204,7 @@ def siirde_sair_tahmini():
         db.session.add(new_insert)
         db.session.commit()
 
-        return render_template("siirde-sair-tahmini.html", pred="Edebi Zeka'nın Tahmini: " + output, pred_headline = "Şaire Ait Bilgiler", form=predict_form, not_sure="Edebi Zeka'nın hatalı tahminde bulunduğunu mu düşünüyorsun? Bize bildir!", poet_age="Şairin Eser Ürettiği Dönem: " + poet_age, poet_century="Şairin Eser Ürettiği Yüzyıl: " + poet_century, poet_bio="Şairin Kısa Biyografisi: " + poet_bio, poems="Şairin şiirleri: " + poems) 
+        return render_template("siirde-sair-tahmini.html", pred="Edebi Zeka'nın Tahmini: " + output, pred_headline = "Şaire Ait Bilgiler", form=predict_form, not_sure="Edebi Zeka'nın hatalı tahminde bulunduğunu mu düşünüyorsun? Bize bildir!", poet_age="Şairin Eser Ürettiği Dönem: " + poet_age, poet_century="Şairin Eser Ürettiği Yüzyıl: " + poet_century, poet_bio="Şairin Kısa Biyografisi: " + poet_bio, poems="Şairin Önemli Şiirleri: " + poems) 
     
     else:
         return render_template("siirde-sair-tahmini.html", form=predict_form)
