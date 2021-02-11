@@ -1,2 +1,2 @@
-# tubitak2021
-Nameless project that I am developing for TÜBİTAK's Competition.
+# Edebi Zeka
+NLP application that I developed for TÜBİTAK competition.
