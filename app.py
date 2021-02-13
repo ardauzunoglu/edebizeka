@@ -6,9 +6,6 @@ from wtforms.fields.core import IntegerField
 import email_validator
 import joblib
 
-age_model = joblib.load(open("templates/models/ez-donem.pkl", "rb"))
-century_model = joblib.load(open("templates/models/ez-yuzyil.pkl", "rb"))
-poet_model = joblib.load(open("templates/models/ez-sair.pkl", "rb"))
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://hupddegoewnnjl:1c3347df1576691bbf0f62229def1424a255337b6ee7236661a4e495a5401013@ec2-34-247-118-233.eu-west-1.compute.amazonaws.com:5432/dcvppo5ei1tbsq"
 db = SQLAlchemy(app)
@@ -76,6 +73,7 @@ def main_page():
 @app.route("/siirde-donem-tahmini", methods=["GET", "POST"])
 def siirde_donem_tahmini():
     predict_form = PredictForm(request.form)
+    age_model = joblib.load(open("templates/models/ez-donem.pkl", "rb"))
     if request.method == "POST" and predict_form.validate():
         donem_kazanim = {"Tanzimat":"Osmanlı Devleti, Batı’nın Rönesans’la başlayıp çeşitli alanlardaki reform hareketleriyle ilerleyişine ayak uyduramamış ve 17.yy.dan sonra gerilemeye başlamıştır. Siyasi ve toplumsal hayatta ortaya çıkan bu gerileme edebiyatta da kendini göstermiştir. 3 Kasım 1839 tarihinde Mustafa Reşit Paşa tarafından Gülhane Parkı’nda okunan Tanzimat Fermanı (Gülhane Hatt-ı Humayunu) ile hem siyasi hem de edebiyat alanında yeni bir dönem başlamıştır. Tanzimat Edebiyatı, Tercüman-ı Ahval gazetesinin 1860’ta yayınlanması ile başlar. Tanzimat ile birlikte Türk edebiyatına yeni edebi türler girmiştir yine bu dönemde Batı’dan çeviriler yapılmış ve ilk örnekler verilmiştir. ",
                         "Servetifünun":"“Sanat, sanat içindir.” görüşünü benimseyen seçkin zümre edebiyatıdır. Konuşma dilinden tamamen uzaklaşılmıştır. Arapça ve Farsça dil kurallarına fazlaca yer  verilmiştir. Ayrıca eserlere, dilimizde o zamana kadar olmayan Farsça ve Arapça kelimeler de girmiştir. Din dışı konularda eser vermişlerdir. Baskı nedeniyle Tanzimatçıların kullandığı kavramları kullanmamışlar, suya sabuna dokunmayan kavramlar üzerinde dolaşmışlardır. Fransız edebiyatından etkilenmenin bir sonucu olarak batıdan “Sone”, “Terza-rima”  ve “serbest müztezat” biçimleri alınmış ve kullanılmıştır. Aruz ölçüsü kullanılmıştır, hece ölçüsü hiçbir zaman ciddiye alınmamıştır. (Hece ölçüsüyle sadece çocuk şiirleri yazılmıştır. / Tevfik Fikret – Şermin ) “Göz için kafiye” yerine “kulak için kafiye” anlayışı kabul edilmiştir.",
@@ -110,9 +108,8 @@ def siirde_donem_tahmini():
 
 @app.route("/siirde-yuzyil-tahmini", methods=["GET", "POST"])
 def siirde_yuzyil_tahmini():
-
     predict_form = PredictForm(request.form)
-
+    century_model = joblib.load(open("templates/models/ez-yuzyil.pkl", "rb"))
     if request.method == "POST" and predict_form.validate(): 
 
         donem_cikarimi = {"19. yüzyıl":["Tanzimat"],
@@ -139,9 +136,8 @@ def siirde_yuzyil_tahmini():
 
 @app.route("/siirde-sair-tahmini", methods=["GET", "POST"])
 def siirde_sair_tahmini():
-
     predict_form = PredictForm(request.form)
-
+    poet_model = joblib.load(open("templates/models/ez-sair.pkl", "rb"))
     if request.method == "POST" and predict_form.validate(): 
 
         poet_info = {
