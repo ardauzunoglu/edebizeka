@@ -1,2 +1,2 @@
 # Edebi Zeka
-NLP application that I developed for TÜBİTAK competition.
+README.md is being updated. Stay tuned folks!
