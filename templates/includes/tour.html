@@ -14,8 +14,8 @@
 
         function step1(){
 
-            document.getElementById("tour-headline").innerHTML = "Edebi Zeka Nedir?"
-            document.getElementById("tour-text").innerHTML = "Edebi Zeka, Arda Uzunoğlu tarafından TÜBİTAK 52. Liseler Arası Araştırma Projeleri Yarışması için geliştirilen bir doğal dil işleme uygulamasıdır."
+            document.getElementById("tour-headline").innerHTML = "Edebî Zekâ Nedir?"
+            document.getElementById("tour-text").innerHTML = "Edebî Zekâ, Arda Uzunoğlu tarafından TÜBİTAK 52. Liseler Arası Araştırma Projeleri Yarışması için geliştirilen bir doğal dil işleme uygulamasıdır."
 
             if (document.contains(document.getElementById("main-page-button"))) {
                 document.getElementById("main-page-button").remove();
@@ -46,8 +46,8 @@
         }   
 
         function step2(){
-            document.getElementById("tour-headline").innerHTML = "Edebi Zeka'nın Var Oluş Amacı"
-            document.getElementById("tour-text").innerHTML = "Edebi Zeka'nın var oluş amacı, kullandığı yapay zeka modeli sayesinde kullanıcından girdi olarak aldığı bir dizenin hangi dönem ve eğilime, şaire ya da yüzyıla ait olduğunu tahmin etmektir."
+            document.getElementById("tour-headline").innerHTML = "Edebî Zekâ'nın Var Oluş Amacı"
+            document.getElementById("tour-text").innerHTML = "Edebî Zekâ'nın var oluş amacı, kullandığı yapay zeka modeli sayesinde kullanıcından girdi olarak aldığı bir dizenin hangi dönem ve eğilime, şaire ya da yüzyıla ait olduğunu tahmin etmektir."
             document.getElementById("right-button").onclick = function() { step3(); };
             
             var left_button = document.getElementById("left-button");
@@ -62,22 +62,22 @@
         }
 
         function step3(){
-            document.getElementById("tour-headline").innerHTML = "Edebi Zeka'nın Çalışma Prensipleri"
-            document.getElementById("tour-text").innerHTML = "Edebi Zeka lojistik regresyon algoritması kullanılarak geliştirilmiş bir yapay zeka modeli kullanmaktadır. Edebi Zeka'nın geliştirilmesinde kullanılan veri setine ve algoritmalara dair daha detaylı bilgi almak isterseniz ana sayfada 'Meraklısına' sekmesine göz atabilirsiniz."
+            document.getElementById("tour-headline").innerHTML = "Edebî Zekâ'nın Çalışma Prensipleri"
+            document.getElementById("tour-text").innerHTML = "Edebî Zekâ lojistik regresyon algoritması kullanılarak geliştirilmiş bir yapay zeka modeli kullanmaktadır. Edebî Zekâ'nın geliştirilmesinde kullanılan veri setine ve algoritmalara dair daha detaylı bilgi almak isterseniz ana sayfada 'Meraklısına' sekmesine göz atabilirsiniz."
             document.getElementById("right-button").onclick = function() { step4(); };
             document.getElementById("left-button").onclick = function() { step2(); };
         }
 
         function step4(){
-            document.getElementById("tour-headline").innerHTML = "Edebi Zeka Neler Yapabilir?"
-            document.getElementById("tour-text").innerHTML = "Edebi Zeka, kullanıcıdan aldığı dize girdisini işleyerek dizenin hangi döneme ve eğilime, yüzyıla ve şaire ait olduğuna yönelik bir tahminde bulunabilir."
+            document.getElementById("tour-headline").innerHTML = "Edebî Zekâ Neler Yapabilir?"
+            document.getElementById("tour-text").innerHTML = "Edebî Zekâ, kullanıcıdan aldığı dize girdisini işleyerek dizenin hangi döneme ve eğilime, yüzyıla ve şaire ait olduğuna yönelik bir tahminde bulunabilir."
             document.getElementById("right-button").onclick = function() { step5(); };
             document.getElementById("left-button").onclick = function() { step3(); };
         }
 
         function step5(){
             document.getElementById("tour-headline").innerHTML = "Şimdilik bu kadar."
-            document.getElementById("tour-text").innerHTML = "Edebi Zeka'yı sevdin mi? Onu baştan tanıyabilir ya da daha detaylı inceleyip özelliklerini denemek için ana sayfaya gidebilirsin -bir göz at derim-."
+            document.getElementById("tour-text").innerHTML = "Edebî Zekâ'yı sevdin mi? Onu baştan tanıyabilir ya da daha detaylı inceleyip özelliklerini denemek için ana sayfaya gidebilirsin -bir göz at derim-."
             document.getElementById("right-button").remove();
             document.getElementById("left-button").remove();
             var main_page_button = document.getElementById("main-page-button")
@@ -235,9 +235,9 @@
 </head>
 <body>
     <div class="tour-container" id="tour-container">
-        <h2 class = "tour-headline" id = "tour-headline"> Merhaba, Edebi Zeka'ya hoş geldin! </h2>
-        <p class = "tour-text", id = "tour-text"> Edebi Zeka ile tanışmak ve onun hakkında bilgi sahibi olmak ister misin? O seninle tanışmak için can atıyor! Bir saniye... Yapay zeka herhangi bir şey için can atabilir mi? Her neyse, bu başka bir tartışma konusu... Haydi gel de Edebi Zeka'ya bir göz atalım!</p>
-        <button class="tour-button" id = "tour-button" type="button" onclick="step1()">Edebi Zeka ile Tanış!</button>
+        <h2 class = "tour-headline" id = "tour-headline"> Merhaba, Edebî Zekâ'ya hoş geldin! </h2>
+        <p class = "tour-text", id = "tour-text"> Edebî Zekâ ile tanışmak ve onun hakkında bilgi sahibi olmak ister misin? O seninle tanışmak için can atıyor! Bir saniye... Yapay zeka herhangi bir şey için can atabilir mi? Her neyse, bu başka bir tartışma konusu... Haydi gel de Edebî Zekâ'ya bir göz atalım!</p>
+        <button class="tour-button" id = "tour-button" type="button" onclick="step1()">Edebî Zekâ ile Tanış!</button>
     </div>
 </body>
 </html>
