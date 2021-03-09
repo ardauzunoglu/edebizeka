@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Edebî Zekâ | Algoritma Seçimi</title>
+    <style>
+        .article-clean {
+        color: #56585b;
+        background-color: #fff;
+        font-family: 'Lora', serif;
+        font-size: 14px;
+        }
+
+        .article-clean .intro {
+        font-size: 16px;
+        margin: 0 auto 30px;
+        }
+
+        .article-clean .intro h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+        padding-top: 20px;
+        line-height: 1.5;
+        color: inherit;
+        margin-top: 20px;
+        }
+
+        .article-clean .intro p {
+        color: #929292;
+        font-size: 12px;
+        }
+
+        .article-clean .intro p .by {
+        font-style: italic;
+        }
+
+        .article-clean .intro p .date {
+        text-transform: uppercase;
+        padding: 4px 0 4px 10px;
+        margin-left: 10px;
+        border-left: 1px solid #ddd;
+        }
+
+        .article-clean .intro p a {
+        color: #333;
+        text-transform: uppercase;
+        padding-left: 3px;
+        }
+
+        .article-clean .intro img {
+        margin-top: 20px;
+        }
+
+        .article-clean .text p {
+        margin-bottom: 20px;
+        line-height: 1.45;
+        }
+
+        @media (min-width:768px) {
+        .article-clean .text p {
+            font-size: 16px;
+        }
+        }
+
+        .article-clean .text h2 {
+        margin-top: 28px;
+        margin-bottom: 20px;
+        line-height: 1.45;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        }
+
+        @media (min-width:768px) {
+        .article-clean .text h2 {
+            font-size: 20px;
+        }
+        }
+
+        .article-clean .text figure {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        }
+
+        .article-clean .text figure img {
+        margin-bottom: 12px;
+        max-width: 100%;
+        }
+
+        .contact-clean {
+        background: #f1f7fc;
+        padding: 80px 0;
+        }
+
+        @media (max-width:767px) {
+        .contact-clean {
+            padding: 20px 0;
+        }
+        }
+
+        .contact-clean form {
+        max-width: 480px;
+        width: 90%;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 4px;
+        color: #505e6c;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width:767px) {
+        .contact-clean form {
+            padding: 30px;
+        }
+        }
+
+        .contact-clean h2 {
+        margin-top: 5px;
+        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 36px;
+        color: inherit;
+        }
+
+        .contact-clean .form-group:last-child {
+        margin-bottom: 5px;
+        }
+
+        .contact-clean form .form-control {
+        background: #fff;
+        border-radius: 2px;
+        box-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+        outline: none;
+        color: inherit;
+        padding-left: 12px;
+        height: 42px;
+        }
+
+        .contact-clean form .form-control:focus {
+        border: 1px solid #b2b2b2;
+        }
+
+        .contact-clean form textarea.form-control {
+        min-height: 100px;
+        max-height: 260px;
+        padding-top: 10px;
+        resize: vertical;
+        }
+
+        .contact-clean form .btn {
+        padding: 16px 32px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        text-shadow: none;
+        opacity: 0.9;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        outline: none !important;
+        }
+
+        .contact-clean form .btn:hover {
+        opacity: 1;
+        }
+
+        .contact-clean form .btn:active {
+        transform: translateY(1px);
+        }
+
+        .contact-clean form .btn-primary {
+        background-color: #055ada !important;
+        margin-top: 15px;
+        color: #fff;
+        }
+
+        .footer-basic {
+        padding: 40px 0;
+        background-color: #ffffff;
+        color: #4b4c4d;
+        }
+
+        .footer-basic ul {
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 0;
+        }
+
+        .footer-basic li {
+        padding: 0 10px;
+        }
+
+        .footer-basic ul a {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.8;
+        }
+
+        .footer-basic ul a:hover {
+        opacity: 1;
+        }
+
+        .footer-basic .social {
+        text-align: center;
+        padding-bottom: 25px;
+        }
+
+        .footer-basic .social > a {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        margin: 0 8px;
+        color: inherit;
+        opacity: 0.75;
+        }
+
+        .footer-basic .social > a:hover {
+        opacity: 0.9;
+        }
+
+        .footer-basic .copyright {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 13px;
+        color: #aaa;
+        margin-bottom: 0;
+        }
+
+        mb-0:hover {
+        text-decoration: none !important;
+        }
+
+        .faq-header {
+        text-decoration: none;
+        }
+
+        .faq-header:hover {
+        text-decoration: none !important;
+        }
+
+        .footer-clean {
+        padding: 50px 0;
+        background-color: #fff;
+        color: #4b4c4d;
+        }
+
+        .footer-clean h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: bold;
+        font-size: 16px;
+        }
+
+        .footer-clean ul {
+        padding: 0;
+        list-style: none;
+        line-height: 1.6;
+        font-size: 14px;
+        margin-bottom: 0;
+        }
+
+        .footer-clean ul a {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.8;
+        }
+
+        .footer-clean ul a:hover {
+        opacity: 1;
+        }
+
+        .footer-clean .item.social {
+        text-align: right;
+        }
+
+        @media (max-width:767px) {
+        .footer-clean .item {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        }
+
+        @media (max-width: 768px) {
+        .footer-clean .item.social {
+            text-align: center;
+        }
+        }
+
+        .footer-clean .item.social > a {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        margin-left: 10px;
+        margin-top: 22px;
+        color: inherit;
+        opacity: 0.75;
+        }
+
+        .footer-clean .item.social > a:hover {
+        opacity: 0.9;
+        }
+
+        @media (max-width:991px) {
+        .footer-clean .item.social > a {
+            margin-top: 40px;
+        }
+        }
+
+        @media (max-width:767px) {
+        .footer-clean .item.social > a {
+            margin-top: 10px;
+        }
+        }
+
+        .footer-clean .copyright {
+        margin-top: 14px;
+        margin-bottom: 0;
+        font-size: 13px;
+        opacity: 0.6;
+        }
+
+        .highlight-clean {
+        color: #313437;
+        background-color: #fff;
+        padding: 50px 0;
+        }
+
+        .highlight-clean p {
+        color: #7d8285;
+        }
+
+        .highlight-clean h2 {
+        font-weight: bold;
+        margin-bottom: 25px;
+        line-height: 1.5;
+        padding-top: 0;
+        margin-top: 0;
+        color: inherit;
+        }
+
+        .highlight-clean .intro {
+        font-size: 16px;
+        max-width: 500px;
+        margin: 0 auto 25px;
+        }
+
+        .highlight-clean .buttons {
+        text-align: center;
+        }
+
+        .highlight-clean .buttons .btn {
+        padding: 16px 32px;
+        margin: 6px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        text-shadow: none;
+        opacity: 0.9;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        outline: none;
+        background-color: #ddd;
+        }
+
+        .highlight-clean .buttons .btn:hover {
+        opacity: 1;
+        }
+
+        .highlight-clean .buttons .btn:active {
+        transform: translateY(1px);
+        }
+
+        .highlight-clean .buttons .btn-primary {
+        background-color: #055ada;
+        color: #fff;
+        }
+
+        .highlight-phone {
+        color: #313437;
+        background-color: #eef4f7;
+        padding: 50px 0 55px;
+        overflow: hidden;
+        }
+
+        @media (max-width:767px) {
+        .highlight-phone {
+            text-align: center;
+        }
+        }
+
+        .highlight-phone p {
+        color: #7d8285;
+        }
+
+        .highlight-phone h2 {
+        font-weight: bold;
+        margin-bottom: 35px;
+        line-height: 1.5;
+        padding-top: 0;
+        margin-top: 0;
+        color: inherit;
+        }
+
+        .highlight-phone .intro {
+        font-size: 18px;
+        max-width: 500px;
+        line-height: 1.5;
+        }
+
+        @media (max-width:767px) {
+        .highlight-phone .intro {
+            max-width: none;
+        }
+        }
+
+        .highlight-phone .intro p {
+        margin-bottom: 35px;
+        }
+
+        .highlight-phone .intro .btn {
+        padding: 16px 32px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        text-shadow: none;
+        opacity: 0.9;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        }
+
+        .highlight-phone .intro .btn:hover {
+        opacity: 1;
+        }
+
+        .highlight-phone .intro .btn:active {
+        transform: translateY(1px);
+        }
+
+        .highlight-phone .intro .btn-primary {
+        background-color: #055ada;
+        color: #fff;
+        }
+
+        .highlight-phone .phone-mockup {
+        position: relative;
+        max-width: 260px;
+        margin-top: -30px;
+        margin-bottom: -230px;
+        transform: rotate(-15deg);
+        }
+
+        .highlight-phone .phone-mockup img.device {
+        width: 100%;
+        height: auto;
+        }
+
+        .highlight-phone .phone-mockup .screen {
+        position: absolute;
+        width: 94%;
+        height: 91%;
+        top: 1%;
+        left: 3%;
+        border: 1px solid #444;
+        border-radius: 20px;
+        background-color: #aaa;
+        overflow: hidden;
+        background: url(../../assets/img/screen-content-phone.jpg);
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        }
+
+        .highlight-phone .phone-mockup .screen:before {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 70%;
+        height: 140%;
+        top: -6%;
+        right: -60%;
+        transform: rotate(-19deg);
+        opacity: 0.2;
+        }
+
+        .navigation-clean-button {
+        background: #fff;
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        color: #333;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        margin-bottom: 0;
+        }
+
+        @media (min-width:768px) {
+        .navigation-clean-button {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        }
+
+        .navigation-clean-button .navbar-brand {
+        font-weight: bold;
+        color: inherit;
+        }
+
+        .navigation-clean-button .navbar-brand:hover {
+        color: #222;
+        }
+
+        .navigation-clean-button .navbar-toggler {
+        border-color: #ddd;
+        }
+
+        .navigation-clean-button .navbar-toggler:hover, .navigation-clean-button .navbar-toggler:focus {
+        background: none;
+        }
+
+        .navigation-clean-button .navbar-toggler {
+        color: #888;
+        }
+
+        .navigation-clean-button .navbar-collapse, .navigation-clean-button .form-inline {
+        border-top-color: #ddd;
+        }
+
+        .navigation-clean-button .navbar-nav a.active, .navigation-clean-button .navbar-nav > .show > a {
+        background: none;
+        box-shadow: none;
+        }
+
+        .navigation-clean-button.navbar-light .navbar-nav a.active, .navigation-clean-button.navbar-light .navbar-nav a.active:focus, .navigation-clean-button.navbar-light .navbar-nav a.active:hover {
+        color: #8f8f8f;
+        box-shadow: none;
+        background: none;
+        pointer-events: none;
+        }
+
+        .navigation-clean-button.navbar .navbar-nav .nav-link {
+        padding-left: 18px;
+        padding-right: 18px;
+        }
+
+        .navigation-clean-button.navbar-light .navbar-nav .nav-link {
+        color: #465765;
+        }
+
+        .navigation-clean-button.navbar-light .navbar-nav .nav-link:focus, .navigation-clean-button.navbar-light .navbar-nav .nav-link:hover {
+        color: #37434d !important;
+        background-color: transparent;
+        }
+
+        .navigation-clean-button .navbar-nav > li > .dropdown-menu {
+        margin-top: -5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,.1);
+        background-color: #fff;
+        border-radius: 2px;
+        }
+
+        .navigation-clean-button .dropdown-menu .dropdown-item:focus, .navigation-clean-button .dropdown-menu .dropdown-item {
+        line-height: 2;
+        font-size: 14px;
+        color: #37434d;
+        }
+
+        .navigation-clean-button .dropdown-menu .dropdown-item:focus, .navigation-clean-button .dropdown-menu .dropdown-item:hover {
+        background: #eee;
+        color: inherit;
+        }
+
+        .navigation-clean-button .actions .login {
+        margin-right: 1rem;
+        text-decoration: none;
+        color: #465765;
+        }
+
+        .navigation-clean-button .navbar-text .action-button, .navigation-clean-button .navbar-text .action-button:active, .navigation-clean-button .navbar-text .action-button:hover {
+        background: #56c6c6;
+        border-radius: 20px;
+        font-size: inherit;
+        color: #fff;
+        box-shadow: none;
+        border: none;
+        text-shadow: none;
+        padding: .5rem 1rem;
+        transition: background-color 0.25s;
+        font-size: inherit;
+        }
+
+        .navigation-clean-button .navbar-text .action-button:hover {
+        background: #66d7d7;
+        }
+
+        .social-icons {
+        color: #313437;
+        background-color: #fff;
+        text-align: center;
+        padding: 70px 0;
+        }
+
+        @media (max-width:767px) {
+        .social-icons {
+            padding: 50px 0;
+        }
+        }
+
+        .social-icons i {
+        font-size: 32px;
+        display: inline-block;
+        color: #757980;
+        margin: 0 10px;
+        width: 60px;
+        height: 60px;
+        border: 1px solid #c8ced7;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 60px;
+        }
+
+    </style>
+    <link rel="icon" href="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/deploy/ez-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+<body>
+    {% include  "includes/navbar.html"%}
+    <section class="article-clean">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family: Ubuntu, sans-serif;">Algoritmalar Hakkında<br></h1>
+                    </div>
+                    <div class="text">
+                        <p style="font-family: Poppins, sans-serif;">Edebî Zekâ'yı geliştirirken çok sınıflı metin sınıflandırma alanında en sık kullanılan beş algoritmayı dönem ve eğilim, yüzyıl ve şair tahmini için ayrı ayrı karşılaştırdık ve elde ettiğimiz accuracy oranları sayesinde seçimimizi yapabildik. Detaylı bilgi sayfanın devamında yer almaktadır.<br></p>
+                        <h2 style="font-family: Quicksand, sans-serif;">Kısaca Lojistik Regresyon Algoritması<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">İstatistikte, lojistik model, geçti/kaldı, kazan/kaybet veya sağlıklı/hasta gibi var olan belirli bir sınıf veya olayın olasılığını modellemek için kullanılır. Bu model, nesne algılaması, çoklu metin sınıflandırma, vb gibi durumlarda kullanılabilir. Temel mantığı eğitildiği veri seti üzerinden yola çıkarak tahminde bulunduğu konu hakkında 0 ve 1 arasında bir olasılık belirlemesidir.<br></p>
+                        <h2 style="font-family: Quicksand, sans-serif;">Kısaca KNN (K-Nearest Neighbors) Algoritması<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">İstatistikte, k-en yakın komşu algoritması (k-NN) parametrik olmayan bir sınıflandırma yöntemidir, ilk olarak Evelyn Fix ve Joseph Hodges tarafından 1951'de geliştirilmiştir ve daha sonra Thomas Cover tarafından genişletilmiştir. Sınıflandırma ve regresyon için kullanılır. KNN, fonksiyonun yalnızca yerel olarak tahmin edildiği ve tüm hesaplamanın fonksiyon değerlendirmesine kadar ertelendiği bir sınıflandırma türüdür. Bu algoritma, sınıflandırma için mesafeye dayandığından, özellikler farklı fiziksel birimleri temsil ederse veya çok farklı ölçeklerde gelirse, eğitim verilerini normalleştirmek, doğruluğunu önemli ölçüde artırabilir.<br></p>
+                        <h2 style="font-family: Quicksand, sans-serif;">Kısaca Naive Bayes Algoritması<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Naive Bayes sınıflandırıcı, örüntü tanıma problemine ilk bakışta oldukça kısıtlayıcı görülen bir önerme ile kullanılabilen olasılıksal bir yaklaşımdır. Bu önerme, örüntü tanımada kullanılacak her bir tanımlayıcı öznitelik ya da parametrenin istatistik açıdan bağımsız olması gerekliliğidir. Her ne kadar bu önerme Naive Bayes sınıflandırıcının kullanım alanını kısıtlasa da, genelde istatistik bağımsızlık koşulu esnetilerek kullanıldığında da daha karmaşık yapay sinir ağları gibi metotlarla karşılaştırabilir sonuçlar vermektedir. Bir Naive Bayes sınıflandırıcı, her özniteliğin birbirinden koşulsal bağımsız olduğu ve öğrenilmek istenen kavramın tüm bu özniteliklere koşulsal bağlı olduğu bir Bayes ağı olarak da düşünülebilir.<br></p>
+                        <h2 style="font-family: Quicksand, sans-serif;">Kısaca Linear Support Vector Machine Algoritması<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Makine öğreniminde, linear support vector machine (doğrusal destek vektör makinesi), sınıflandırma ve regresyon analizi için verileri analiz eden ilişkili öğrenme algoritmalarına sahip denetimli öğrenme modelleridir.<br></p>
+                        <h2 style="font-family: Quicksand, sans-serif;">Kısaca Keras<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Keras, yapay sinir ağları için bir Python arabirimi sağlayan açık kaynaklı bir yazılım kitaplığıdır. Keras, TensorFlow kitaplığı için bir arabirim görevi görür.<br></p>
+                        <p style="font-family: Poppins, sans-serif;">Seçtiğimiz algoritmalar ile eğittiğimiz yapay zeka modellerimizin detaylı doğruluk (accuracy) oranlarını görmek için tıklayınız.<br></p>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family: Ubuntu, sans-serif;">Dönem ve Eğilim Tahmini için Algoritma Seçimi<br></h1>
+                    </div>
+                    <div class="text">
+                        <p style="font-family: Poppins, sans-serif;"><strong>Karşılaştırılan Algoritmalar:&nbsp;</strong>Lojistik Regresyon, KNN (K-Nearest Neighbors), Naive Bayes, Linear Support Vector Machine, Keras.<br></p>
+                        <p style="font-family: Poppins, sans-serif;"><strong>Seçilen Algoritma:&nbsp;</strong>Lojistik Regresyon.<br></p>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Lojistik Regresyon Algoritması ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Lojistik regresyon algoritması, veri setimizi kullanarak eğittiğimiz yapay zeka modelimiz için kullandığımız algoritmalar arasında başarı yani accuracy oranı genelde en yüksek olan algoritma oldu. Genel accuracy oranı %88.7 olan lojistik regresyonun bazı dönemleri ve eğilimleri tahmin ederken genel oranının üstüne çıktığı da gözlemlendi.<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> 1923-1960 Arası Toplumcu Serbest Şiir: %97 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 92%;"> Servetifünun: %92 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%;"> Genel Oran: %88 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 84%;"> Hisarcılar: %84 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"> İkinci Yeni: %80 </div>
+</div>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">KNN Algoritması ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">KNN (K-Nearest Neighbors) algoritması, %64.2'lik accuracy oranı ile lojistik regresyona göre geride kaldı. Dönemlere ve eğilimlere ayrıldığında bile lojistik regresyon ortalamasına yaklaşamayan KNN, bazı dönem ve eğilimlerde kendi ortalamasının üstüne çıkarken bazılarında da ortalmasının altında kaldı.<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 81%;"> Metafizik Anlayışını Öne Çıkaran Şiir: %81</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 73%;"> Cumhuriyet Dönemi Saf Şiir: %73</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 64%;"> Genel Oran: %64</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 57%;"> Hisarcılar: %57</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 56%;"> Fecri Ati: %56</div>
+</div>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Naive Bayes Algoritması ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Naive bayes algoritması, %61.6'lık accuracy oranı ile hem lojistik regresyon hem de KNN algoritmalarının gerisinde kaldı. Dönemlerin ve eğilimlerin bir kısmında lojistik regresyon düzeyinde gösterdiği başarı ile bazılarında gösterdiği net başarısızlık veri setimizi ikiye böldü.<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Milli Edebiyat: %100</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 93%;"> Hececiler: %93</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 61%;"> Genel Oran: %61</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"> Cumhuriyet Dönemi Saf Şiir: %50</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 36%;"> 1960 Sonrası Toplumcu Şiir: %36</div>
+</div>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Linear Support Vector Machine Algoritması ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Linear support vector machine algoritması, hem genel hem de dönemlere ve eğilimlere göre accuracy oranında lojistik regresyon algoritmasına en yakın algoritma oldu. Genel accuracy oranı %71.4 olan LSVM algoritması, bazı dönemlerde ve eğilimlerde kendi ortalamasını aşıp lojistik regresyon düzeyine yaklaşırken bazılarında ise kendi ortalamasının altında kaldı.<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 89%;"> İkinci Yeni: %89</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 86%;"> Garip Şiir: %86</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 71%;"> Genel Oran: %71</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 68%;"> Metafizik Anlayışını Öne Çıkaran Şiir: %68</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 66%;"> Milli Edebiyat: %66</div>
+</div>
+
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Keras ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Keras, %65.3'lük bir genel accuracy oranı ile LSVM ve KNN algoritmaları arasında yerini aldı. Maalesef keras algoritmasının dönemlere ve eğilimlere ait accuracy oranlarına dair bir bilgimiz bulunmamakta.<br></p>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family: Ubuntu, sans-serif;">Yüzyıl Tahmini için Algoritma Seçimi<br></h1>
+                    </div>
+                    <div class="text">
+                        <p style="font-family: Poppins, sans-serif;"><strong>Karşılaştırılan Algoritmalar:&nbsp;</strong>Lojistik Regresyon, KNN (K-Nearest Neighbors), Naive Bayes, Linear Support Vector Machine, Keras.<br></p>
+                        <p style="font-family: Poppins, sans-serif;"><strong>Seçilen Algoritma:&nbsp;</strong>Lojistik Regresyon.<br></p>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Lojistik Regresyon Algoritması ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Lojistik regresyon algoritması, yüzyıl tahmininde tıpkı dönem ve eğilim tahmininde de olduğu gibi genel accuracy oranı en yüksek olan algoritma oldu. Genel accuracy oranı %99.8 olan lojistik regresyon algoritmasının yüzyıllara göre accuracy oranları ise aşağıdaki gibi:<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> 20. yüzyılın 2. yarısı: %100 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> 20. yüzyılın 1. yarısı: %100 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> 19. yüzyıl: %100</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Genel Oran: %99 </div>
+</div>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">KNN Algoritması ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">KNN (K-Nearest Neighbors) algoritması, lojistik regresyonun hem genel hem de yüzyıllara özgü accuracy oranları açısında altında kalırken genel accuracy oranı %82.3 oldu. 19. yüzyılı tahmin etmede başarısız olan KNN algoritmasının yüzyıllara göre accuracy oranları ise aşağıdaki gibi:<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 83%;"> 20. yüzyılın 2. yarısı: %83 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 83%;"> 20. yüzyılın 1. yarısı: %83 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 82%;"> Genel Oran: %82 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 63%;"> 19. yüzyıl: %63</div>
+</div>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Naive Bayes Algoritması ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Naive bayes algoritması, %87.4'lük genel accuracy oranı ile KNN ve lojistik regresyon algoritmalarının arasında yer alıyor. 20. yüzyılın 2. yarısını tahmin etmede lojistik regresyonu yakalayan naive bayes algoritmasının yüzyıllara göre accuracy oranları ise aşağıdaki gibi:<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> 20. yüzyılın 2. yarısı: %100 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"> 20. yüzyılın 1. yarısı: %90 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 87%;"> Genel Oran: %87 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 86%;"> 19. yüzyıl: %86</div>
+</div>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Linear Support Vector Machine Algoritması ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Linear support vector machine algoritması diğer algoritmaların aksine oldukça düşük bir accuracy oranına sahip oldu. Genel accuracy oranı %62.7 olan LSVM algoritmasının yüzyıllara göre accuracy oranları ise aşağıdaki gibi:<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 63%;"> 20. yüzyılın 2. yarısı: %63 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 62%;"> Genel Oran: %62 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 48%;"> 20. yüzyılın 1. yarısı: %48</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 45%;"> 19. yüzyıl: %45</div>
+</div>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Keras ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Keras, KNN algoritmasına oldukça yakın bir genel accuracy oranına sahip, %83.5. Maalesef keras algoritmasının yüzyıllara ait accuracy oranlarına dair bir bilgimiz bulunmamakta.<br></p>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family: Ubuntu, sans-serif;">Şair Tahmini için Algoritma Seçimi<br></h1>
+                    </div>
+                    <div class="text">
+                        <p style="font-family: Poppins, sans-serif;"><strong>Karşılaştırılan Algoritmalar:&nbsp;</strong>Lojistik Regresyon, KNN (K-Nearest Neighbors), Naive Bayes, Linear Support Vector Machine, Keras.<br></p>
+                        <p style="font-family: Poppins, sans-serif;"><strong>Seçilen Algoritma:&nbsp;</strong>Lojistik Regresyon.<br></p>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Lojistik Regresyon Algoritması ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Lojistik regresyon algoritması, dönem ve eğilim tahmininde elde ettiği ve yüzyıl tahmininde de koruduğu "en yüksek accuracy oranına sahip algoritma" sıfatını şair tahmininde de sürdürüyor. Genel accuracy oranı %92.7 olan lojistik regresyonun, genel accuracy oranına kıyasla daha yüksek bir oranla tahmin ettiği şairler olduğu gibi genel oranın altında kalıp daha düşük oranlarla tahminlerde bulunduğu şairler de mevcut.<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Attila İlhan: %100 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"> Mehmet Akif Ersoy: %98 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 92%;"> Genel Oran: %92 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 88%;"> Abdülhak Hamit Tarhan: %88 </div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 82%;"> Cahit Sıtkı Tarancı: %82 </div>
+</div>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">KNN Algoritması ve Sonuçları<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">KNN (K-Nearest Neighbors) algoritması, lojistik regresyona kıyasla daha düşük bir genel accuracy oranına sahip. %62.4 genel accuracy oranına sahip olan KNN'in, şair şair incelediğimiz zaman da istediğimiz başarı oranının altında kaldığını görebiliyoruz.<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 81%;"> Namık Kemal: %81</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 79%;"> Özdemir Asaf: %79</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 62%;"> Genel Oran: %62</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 52%;">Ahmet Hamdi Tanpınar: %52</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 49%;"> Recaizade Mahmud Ekrem: %49</div>
+</div>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Kısaca Naive Bayes Algoritması<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Naive bayes algoritması, %55.1'lik genel accuracy ortalaması ile şair tahmininde kıyasladığımız algoritmalar arasında sonuncu oluyor. Naive bayes, tıpkı dönem ve eğilim tahmininde bazı dönemleri ve eğilimleri çok iyi tahmin edip bazılarını edemediği gibi şair tahmininde de kimi şairler için çok iyi oranlarla tahminlerde bulunurken kimilerinde ise çok yetersiz.<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Necip Fazıl Kısakürek: %99</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 94%;"> Enis Batur: %94</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 55%;"> Genel Oran: %55</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 51%;"> Faruk Nafiz Çamlıbel: %51</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 46%;">Namık Kemal: %46</div>
+</div>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Kısaca Linear Support Vector Machine Algoritması<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Linear support vector machine algoritması, %75.9'luk genel accuracy oranı ile lojistik regresyonunun ardından ikinci sırada gelerek en başarılı ikinci algoritma oluyor. Şair şair incelendiği zaman lojistik regresyon düzeyinde oranlara sahip olduğu görülebilen LSVM algoritmasının bazı şairler için ortalamanın altında kalan oranları da mevcut.<br></p><div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"> Orhan Veli Kanık: %90</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"> Sezai Karakoç: %85</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"> Genel Oran: %75</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 68%;"> Cahit Sıtkı Tarancı: %68</div>
+</div>
+<div class="progress" style="margin: 18px 0px;">
+    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 66%;"> İsmet Özel: %66</div>
+</div>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Kısaca Keras<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">Keras algoritması, %60.6'lık genel accuracy oranı ile naive bayes algoritmasının üstünde, sondan ikinci sırada yer alıyor. Maalesef keras algoritmasının şairlere ait accuracy oranlarına dair bir bilgimiz bulunmamakta.<br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% include "includes/footer.html"%}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
