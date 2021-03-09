@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Edebî Zekâ | Kullandığımız Modellerin Detaylı Doğruluk Oranları Bölge Finalleri</title>
+    <style>
+        .article-clean {
+        color: #56585b;
+        background-color: #fff;
+        font-family: 'Lora', serif;
+        font-size: 14px;
+        }
+
+        .article-clean .intro {
+        font-size: 16px;
+        margin: 0 auto 30px;
+        }
+
+        .article-clean .intro h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+        padding-top: 20px;
+        line-height: 1.5;
+        color: inherit;
+        margin-top: 20px;
+        }
+
+        .article-clean .intro p {
+        color: #929292;
+        font-size: 12px;
+        }
+
+        .article-clean .intro p .by {
+        font-style: italic;
+        }
+
+        .article-clean .intro p .date {
+        text-transform: uppercase;
+        padding: 4px 0 4px 10px;
+        margin-left: 10px;
+        border-left: 1px solid #ddd;
+        }
+
+        .article-clean .intro p a {
+        color: #333;
+        text-transform: uppercase;
+        padding-left: 3px;
+        }
+
+        .article-clean .intro img {
+        margin-top: 20px;
+        }
+
+        .article-clean .text p {
+        margin-bottom: 20px;
+        line-height: 1.45;
+        }
+
+        @media (min-width:768px) {
+        .article-clean .text p {
+            font-size: 16px;
+        }
+        }
+
+        .article-clean .text h2 {
+        margin-top: 28px;
+        margin-bottom: 20px;
+        line-height: 1.45;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        }
+
+        @media (min-width:768px) {
+        .article-clean .text h2 {
+            font-size: 20px;
+        }
+        }
+
+        .article-clean .text figure {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        }
+
+        .article-clean .text figure img {
+        margin-bottom: 12px;
+        max-width: 100%;
+        }
+
+        .contact-clean {
+        background: #f1f7fc;
+        padding: 80px 0;
+        }
+
+        @media (max-width:767px) {
+        .contact-clean {
+            padding: 20px 0;
+        }
+        }
+
+        .contact-clean form {
+        max-width: 480px;
+        width: 90%;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 4px;
+        color: #505e6c;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width:767px) {
+        .contact-clean form {
+            padding: 30px;
+        }
+        }
+
+        .contact-clean h2 {
+        margin-top: 5px;
+        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 36px;
+        color: inherit;
+        }
+
+        .contact-clean .form-group:last-child {
+        margin-bottom: 5px;
+        }
+
+        .contact-clean form .form-control {
+        background: #fff;
+        border-radius: 2px;
+        box-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+        outline: none;
+        color: inherit;
+        padding-left: 12px;
+        height: 42px;
+        }
+
+        .contact-clean form .form-control:focus {
+        border: 1px solid #b2b2b2;
+        }
+
+        .contact-clean form textarea.form-control {
+        min-height: 100px;
+        max-height: 260px;
+        padding-top: 10px;
+        resize: vertical;
+        }
+
+        .contact-clean form .btn {
+        padding: 16px 32px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        text-shadow: none;
+        opacity: 0.9;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        outline: none !important;
+        }
+
+        .contact-clean form .btn:hover {
+        opacity: 1;
+        }
+
+        .contact-clean form .btn:active {
+        transform: translateY(1px);
+        }
+
+        .contact-clean form .btn-primary {
+        background-color: #055ada !important;
+        margin-top: 15px;
+        color: #fff;
+        }
+
+        .footer-basic {
+        padding: 40px 0;
+        background-color: #ffffff;
+        color: #4b4c4d;
+        }
+
+        .footer-basic ul {
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 0;
+        }
+
+        .footer-basic li {
+        padding: 0 10px;
+        }
+
+        .footer-basic ul a {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.8;
+        }
+
+        .footer-basic ul a:hover {
+        opacity: 1;
+        }
+
+        .footer-basic .social {
+        text-align: center;
+        padding-bottom: 25px;
+        }
+
+        .footer-basic .social > a {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        margin: 0 8px;
+        color: inherit;
+        opacity: 0.75;
+        }
+
+        .footer-basic .social > a:hover {
+        opacity: 0.9;
+        }
+
+        .footer-basic .copyright {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 13px;
+        color: #aaa;
+        margin-bottom: 0;
+        }
+
+        mb-0:hover {
+        text-decoration: none !important;
+        }
+
+        .faq-header {
+        text-decoration: none;
+        }
+
+        .faq-header:hover {
+        text-decoration: none !important;
+        }
+
+        .footer-clean {
+        padding: 50px 0;
+        background-color: #fff;
+        color: #4b4c4d;
+        }
+
+        .footer-clean h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: bold;
+        font-size: 16px;
+        }
+
+        .footer-clean ul {
+        padding: 0;
+        list-style: none;
+        line-height: 1.6;
+        font-size: 14px;
+        margin-bottom: 0;
+        }
+
+        .footer-clean ul a {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.8;
+        }
+
+        .footer-clean ul a:hover {
+        opacity: 1;
+        }
+
+        .footer-clean .item.social {
+        text-align: right;
+        }
+
+        @media (max-width:767px) {
+        .footer-clean .item {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        }
+
+        @media (max-width: 768px) {
+        .footer-clean .item.social {
+            text-align: center;
+        }
+        }
+
+        .footer-clean .item.social > a {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        margin-left: 10px;
+        margin-top: 22px;
+        color: inherit;
+        opacity: 0.75;
+        }
+
+        .footer-clean .item.social > a:hover {
+        opacity: 0.9;
+        }
+
+        @media (max-width:991px) {
+        .footer-clean .item.social > a {
+            margin-top: 40px;
+        }
+        }
+
+        @media (max-width:767px) {
+        .footer-clean .item.social > a {
+            margin-top: 10px;
+        }
+        }
+
+        .footer-clean .copyright {
+        margin-top: 14px;
+        margin-bottom: 0;
+        font-size: 13px;
+        opacity: 0.6;
+        }
+
+        .highlight-clean {
+        color: #313437;
+        background-color: #fff;
+        padding: 50px 0;
+        }
+
+        .highlight-clean p {
+        color: #7d8285;
+        }
+
+        .highlight-clean h2 {
+        font-weight: bold;
+        margin-bottom: 25px;
+        line-height: 1.5;
+        padding-top: 0;
+        margin-top: 0;
+        color: inherit;
+        }
+
+        .highlight-clean .intro {
+        font-size: 16px;
+        max-width: 500px;
+        margin: 0 auto 25px;
+        }
+
+        .highlight-clean .buttons {
+        text-align: center;
+        }
+
+        .highlight-clean .buttons .btn {
+        padding: 16px 32px;
+        margin: 6px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        text-shadow: none;
+        opacity: 0.9;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        outline: none;
+        background-color: #ddd;
+        }
+
+        .highlight-clean .buttons .btn:hover {
+        opacity: 1;
+        }
+
+        .highlight-clean .buttons .btn:active {
+        transform: translateY(1px);
+        }
+
+        .highlight-clean .buttons .btn-primary {
+        background-color: #055ada;
+        color: #fff;
+        }
+
+        .highlight-phone {
+        color: #313437;
+        background-color: #eef4f7;
+        padding: 50px 0 55px;
+        overflow: hidden;
+        }
+
+        @media (max-width:767px) {
+        .highlight-phone {
+            text-align: center;
+        }
+        }
+
+        .highlight-phone p {
+        color: #7d8285;
+        }
+
+        .highlight-phone h2 {
+        font-weight: bold;
+        margin-bottom: 35px;
+        line-height: 1.5;
+        padding-top: 0;
+        margin-top: 0;
+        color: inherit;
+        }
+
+        .highlight-phone .intro {
+        font-size: 18px;
+        max-width: 500px;
+        line-height: 1.5;
+        }
+
+        @media (max-width:767px) {
+        .highlight-phone .intro {
+            max-width: none;
+        }
+        }
+
+        .highlight-phone .intro p {
+        margin-bottom: 35px;
+        }
+
+        .highlight-phone .intro .btn {
+        padding: 16px 32px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        text-shadow: none;
+        opacity: 0.9;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        }
+
+        .highlight-phone .intro .btn:hover {
+        opacity: 1;
+        }
+
+        .highlight-phone .intro .btn:active {
+        transform: translateY(1px);
+        }
+
+        .highlight-phone .intro .btn-primary {
+        background-color: #055ada;
+        color: #fff;
+        }
+
+        .highlight-phone .phone-mockup {
+        position: relative;
+        max-width: 260px;
+        margin-top: -30px;
+        margin-bottom: -230px;
+        transform: rotate(-15deg);
+        }
+
+        .highlight-phone .phone-mockup img.device {
+        width: 100%;
+        height: auto;
+        }
+
+        .highlight-phone .phone-mockup .screen {
+        position: absolute;
+        width: 94%;
+        height: 91%;
+        top: 1%;
+        left: 3%;
+        border: 1px solid #444;
+        border-radius: 20px;
+        background-color: #aaa;
+        overflow: hidden;
+        background: url(../../assets/img/screen-content-phone.jpg);
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        }
+
+        .highlight-phone .phone-mockup .screen:before {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 70%;
+        height: 140%;
+        top: -6%;
+        right: -60%;
+        transform: rotate(-19deg);
+        opacity: 0.2;
+        }
+
+        .navigation-clean-button {
+        background: #fff;
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        color: #333;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        margin-bottom: 0;
+        }
+
+        @media (min-width:768px) {
+        .navigation-clean-button {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        }
+
+        .navigation-clean-button .navbar-brand {
+        font-weight: bold;
+        color: inherit;
+        }
+
+        .navigation-clean-button .navbar-brand:hover {
+        color: #222;
+        }
+
+        .navigation-clean-button .navbar-toggler {
+        border-color: #ddd;
+        }
+
+        .navigation-clean-button .navbar-toggler:hover, .navigation-clean-button .navbar-toggler:focus {
+        background: none;
+        }
+
+        .navigation-clean-button .navbar-toggler {
+        color: #888;
+        }
+
+        .navigation-clean-button .navbar-collapse, .navigation-clean-button .form-inline {
+        border-top-color: #ddd;
+        }
+
+        .navigation-clean-button .navbar-nav a.active, .navigation-clean-button .navbar-nav > .show > a {
+        background: none;
+        box-shadow: none;
+        }
+
+        .navigation-clean-button.navbar-light .navbar-nav a.active, .navigation-clean-button.navbar-light .navbar-nav a.active:focus, .navigation-clean-button.navbar-light .navbar-nav a.active:hover {
+        color: #8f8f8f;
+        box-shadow: none;
+        background: none;
+        pointer-events: none;
+        }
+
+        .navigation-clean-button.navbar .navbar-nav .nav-link {
+        padding-left: 18px;
+        padding-right: 18px;
+        }
+
+        .navigation-clean-button.navbar-light .navbar-nav .nav-link {
+        color: #465765;
+        }
+
+        .navigation-clean-button.navbar-light .navbar-nav .nav-link:focus, .navigation-clean-button.navbar-light .navbar-nav .nav-link:hover {
+        color: #37434d !important;
+        background-color: transparent;
+        }
+
+        .navigation-clean-button .navbar-nav > li > .dropdown-menu {
+        margin-top: -5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,.1);
+        background-color: #fff;
+        border-radius: 2px;
+        }
+
+        .navigation-clean-button .dropdown-menu .dropdown-item:focus, .navigation-clean-button .dropdown-menu .dropdown-item {
+        line-height: 2;
+        font-size: 14px;
+        color: #37434d;
+        }
+
+        .navigation-clean-button .dropdown-menu .dropdown-item:focus, .navigation-clean-button .dropdown-menu .dropdown-item:hover {
+        background: #eee;
+        color: inherit;
+        }
+
+        .navigation-clean-button .actions .login {
+        margin-right: 1rem;
+        text-decoration: none;
+        color: #465765;
+        }
+
+        .navigation-clean-button .navbar-text .action-button, .navigation-clean-button .navbar-text .action-button:active, .navigation-clean-button .navbar-text .action-button:hover {
+        background: #56c6c6;
+        border-radius: 20px;
+        font-size: inherit;
+        color: #fff;
+        box-shadow: none;
+        border: none;
+        text-shadow: none;
+        padding: .5rem 1rem;
+        transition: background-color 0.25s;
+        font-size: inherit;
+        }
+
+        .navigation-clean-button .navbar-text .action-button:hover {
+        background: #66d7d7;
+        }
+
+        .social-icons {
+        color: #313437;
+        background-color: #fff;
+        text-align: center;
+        padding: 70px 0;
+        }
+
+        @media (max-width:767px) {
+        .social-icons {
+            padding: 50px 0;
+        }
+        }
+
+        .social-icons i {
+        font-size: 32px;
+        display: inline-block;
+        color: #757980;
+        margin: 0 10px;
+        width: 60px;
+        height: 60px;
+        border: 1px solid #c8ced7;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 60px;
+        }
+
+    </style>
+    <link rel="icon" href="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/deploy/ez-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+<body>
+    {% include  "includes/navbar.html"%}
+    <section class="article-clean">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family: Ubuntu, sans-serif;">Accuracy (Doğruluk) Oranı Ne Anlam İfade Etmektedir?<br></h1>
+                    </div>
+                    <div class="text">
+                        <p style="font-family: Poppins, sans-serif;">Bir makine öğrenimi sınıflandırma algoritmasının doğruluğu, algoritmanın bir veri noktasını ne sıklıkla doğru şekilde sınıflandırdığını ölçmenin bir yoludur. Doğruluk, tüm veri noktalarından doğru tahmin edilen veri noktalarının sayısıdır. Daha resmi olarak, gerçek pozitiflerin ve gerçek negatiflerin sayısının gerçek pozitiflerin, gerçek negatiflerin, yanlış pozitiflerin ve yanlış negatiflerin sayısına bölünmesiyle tanımlanır. Gerçek pozitif veya gerçek negatif, algoritmanın sırasıyla doğru veya yanlış olarak doğru şekilde sınıflandırdığı bir veri noktasıdır. Yanlış pozitif veya yanlış negatif ise, algoritmanın yanlış sınıflandırdığı bir veri noktasıdır. Örneğin, algoritma yanlış bir veri noktasını doğru olarak sınıflandırırsa, bu yanlış bir pozitif olur. Çoğu zaman, accuracy kavramı&nbsp;<strong>precision&nbsp;</strong>ve&nbsp;<strong>recall&nbsp;</strong>kavramları ile birlikte kullanılır. Bu ölçümler birlikte, algoritmanın veri noktalarını nasıl sınıflandırdığına dair ayrıntılı bir bakış sağlar.<br></p>
+                        <p style="font-family: Poppins, sans-serif;"><strong>Precision (Kesinlik):&nbsp;</strong>Pozitif olarak tahminlediğimiz değerlerin gerçekten kaç adedinin pozitif olduğunu göstermektedir. Precision değeri özellikle False Positive tahminlemenin maliyeti yüksek olduğu durumlarda çok önemlidir.<br></p>
+                        <p style="font-family: Poppins, sans-serif;"><strong>Recall (Duyarlılık):&nbsp;</strong>Pozitif olarak tahmin etmemiz gereken işlemlerin ne kadarını pozitif olarak tahmin ettiğimizi gösteren bir metriktir. Duyarlılık değeri de False Negative olarak tahminlemenin maliyetinin yüksek olduğu durumlarda bize yardımcı olacak bir metriktir. Mümkün olduğunca yüksek olması gereklidir.<br></p>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family: Ubuntu, sans-serif;">Dönem ve Eğilim Tahmini İçin Geliştirdiğimiz Yapay Zeka Modelinin Detaylı Accuracy Oranları<br></h1>
+                    </div>
+                    <div class="text">
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Giriş<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">16 farklı dönem ve eğilim arasından en başarılı dönem tahmini&nbsp;<strong>%97'lik accuracy oranı ile&nbsp;</strong>1923-1960 Arası Toplumcu Serbest Şiir ve Fecri Ati dönemleri için gerçekleşti. Genel accuracy oranı&nbsp;<strong>%90.5&nbsp;</strong>olurken en başarısız dönem tahmini&nbsp;<strong>%82'lik accuracy oranı ile&nbsp;</strong>Yedi Meşaleciler için gerçekleşti.<br></p>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Dönemlere ve Eğilimlere Göre Accuracy Oranları<br></h2><div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> 1923-1960 Arası Toplumcu Serbest Şiir: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"> Fecri Ati: %98 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" style="width: 96%;"> Maviciler: %96 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 93%;"> Cumhuriyet Dönemi Saf Şiir: %93 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width: 93%;"> 1980 Sonrası Şiir: %93 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 93%;"> 1960 Sonrası Toplumcu Şiir: %93 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 92%;"> Servetifünun: %92 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 92%;"> Tanzimat: %92 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 92%;"> Garip Şiiri: %92 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 91%;"> Milli Edebiyat Anlayışını Yansıtan Şiir: %91 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"> İkinci Yeni: %90 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"> Genel Oran: %90 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 89%;"> Hececiler: %89 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 88%;"> Metafizik Anlayışını Öne Çıkaran Şiir: %88 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 87%;"> Milli Edebiyat: %87 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width: 86%;"> Hisarcılar: %86 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width: 82%;"> Yedi Meşaleciler: %82 </div>
+            </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family: Ubuntu, sans-serif;">Yüzyıl Tahmini İçin Geliştirdiğimiz Yapay Zeka Modelinin Detaylı Accuracy Oranları<br></h1>
+                    </div>
+                    <div class="text">
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Yüzyıllara Göre Accuracy Oranları<br></h2> <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> 20. yüzyılın 2. yarısı: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> 20. yüzyılın 1. yarısı: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> 19. yüzyıl: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Genel Oran: %99 </div>
+            </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family: Ubuntu, sans-serif;">Şair Tahmini İçin Geliştirdiğimiz Yapay Zeka Modelinin Detaylı Accuracy Oranları<br></h1>
+                    </div>
+                    <div class="text">
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Giriş<br></h2>
+                        <p style="font-family: Poppins, sans-serif;">59 farklı şair arasından en başarılı şair tahmini&nbsp;<strong>%100'lük accuracy oranı ile&nbsp;</strong>Cemal Süreya, Oktay Rıfat, Ahmet Haşim, Tevfik Fikret, vb... için gerçekleşti. Genel accuracy oranı&nbsp;<strong>%96.7&nbsp;</strong>olurken en başarısız şair tahmini&nbsp;<strong>%92'lik accuracy oranı ile&nbsp;</strong>Ahmet Kutsi Tecer ve Ahmet Hamdi Tanpınar için gerçekleşti.<br></p>
+                        <h2 style="margin-top: 64px;font-family: Quicksand, sans-serif;">Şairlere Göre Accuracy Oranları<br></h2><div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Cemal Süreya: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Oktay Rıfat: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Ahmet Haşim: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Cenap Şahabettin: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Tevfik Fikret: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Ziya Paşa: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Abdülhak Hamit Tarhan: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> İbrahim Şinasi: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Arif Nihat Asya: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Ceyhun Atuf Kansu: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Ziya Osman Saba: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Cahit Sıtkı Tarancı: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Yusuf Ziya Ortaç: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Ali Canip Yöntem: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Bekir Sıtkı Erdoğan: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Ebubekir Eroğlu: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"> Nuri Pakdil: %100 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Edip Cansever: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Turgut Uyar: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Ece Ayhan: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Orhan Veli Kanık: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Süleyman Nazif: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Enis Batur: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Haydar Ergülen: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Yavuz Bülent Bakiler: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Orhan Şaik Gökyay: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Halide Nusret Zorlutuna: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;"> Mehmet Akif İnan: %99 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"> Sezai Karakoç: %98 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"> Melih Cevdet Anday: %98 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"> Mehmet Akif Ersoy: %98 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"> Yahya Kemal: %98 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"> Murathan Mungan: %98 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"> Erdem Beyazıt: %98 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"> Kemalettin Kamu: %98 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"> Nazım Hikmet: %98 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100" style="width: 98%;"> Cahit Külebi: %98 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> Halit Fahri Ozansoy: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> Faruk Nafiz Çamlıbel: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> Ziya Gökalp: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> Namık Kemal: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> Ahmet Arif: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> Ataol Behramoğlu: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> Mehmet Çınarlı: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> Orhan Seyfi Orhon: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> Enis Behiç Koryürek: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> İlhan Geçer: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> Murat Menteş: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%;"> Fazıl Hüsnü Dağlarca: %97 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" style="width: 96%;"> Recaizade Mahmud Ekrem: %96 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="96" aria-valuemin="0" aria-valuemax="100" style="width: 96%;"> İsmet Özel: %96 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 96%;"> Genel Oran: %96 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"> Cahit Zarifoğlu: %95 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"> Necip Fazıl Kısakürek: %95 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" style="width: 94%;"> Mehmet Emin Yurdakul: %94 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 94%;"> Attila İlhan: %94 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 94%;"> Özdemir Asaf: %94 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 93%;"> İbrahim Tenekeci: %93 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 92%;"> Ahmet Kutsi Tecer: %92 </div>
+            </div>
+            <div class="progress" style="margin: 18px 0px;">
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" style="width: 92%;"> Ahmet Hamdi Tanpınar: %92 </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "includes/footer.html"%}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

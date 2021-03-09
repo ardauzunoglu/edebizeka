@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Edebî Zekâ | Veri Setine Dair Her Şey Bölge Finalleri</title>
+    <style>
+        .article-clean {
+        color: #56585b;
+        background-color: #fff;
+        font-family: 'Lora', serif;
+        font-size: 14px;
+        }
+
+        .article-clean .intro {
+        font-size: 16px;
+        margin: 0 auto 30px;
+        }
+
+        .article-clean .intro h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+        padding-top: 20px;
+        line-height: 1.5;
+        color: inherit;
+        margin-top: 20px;
+        }
+
+        .article-clean .intro p {
+        color: #929292;
+        font-size: 12px;
+        }
+
+        .article-clean .intro p .by {
+        font-style: italic;
+        }
+
+        .article-clean .intro p .date {
+        text-transform: uppercase;
+        padding: 4px 0 4px 10px;
+        margin-left: 10px;
+        border-left: 1px solid #ddd;
+        }
+
+        .article-clean .intro p a {
+        color: #333;
+        text-transform: uppercase;
+        padding-left: 3px;
+        }
+
+        .article-clean .intro img {
+        margin-top: 20px;
+        }
+
+        .article-clean .text p {
+        margin-bottom: 20px;
+        line-height: 1.45;
+        }
+
+        @media (min-width:768px) {
+        .article-clean .text p {
+            font-size: 16px;
+        }
+        }
+
+        .article-clean .text h2 {
+        margin-top: 28px;
+        margin-bottom: 20px;
+        line-height: 1.45;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        }
+
+        @media (min-width:768px) {
+        .article-clean .text h2 {
+            font-size: 20px;
+        }
+        }
+
+        .article-clean .text figure {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        }
+
+        .article-clean .text figure img {
+        margin-bottom: 12px;
+        max-width: 100%;
+        }
+
+        .contact-clean {
+        background: #f1f7fc;
+        padding: 80px 0;
+        }
+
+        @media (max-width:767px) {
+        .contact-clean {
+            padding: 20px 0;
+        }
+        }
+
+        .contact-clean form {
+        max-width: 480px;
+        width: 90%;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 4px;
+        color: #505e6c;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width:767px) {
+        .contact-clean form {
+            padding: 30px;
+        }
+        }
+
+        .contact-clean h2 {
+        margin-top: 5px;
+        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 36px;
+        color: inherit;
+        }
+
+        .contact-clean .form-group:last-child {
+        margin-bottom: 5px;
+        }
+
+        .contact-clean form .form-control {
+        background: #fff;
+        border-radius: 2px;
+        box-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+        outline: none;
+        color: inherit;
+        padding-left: 12px;
+        height: 42px;
+        }
+
+        .contact-clean form .form-control:focus {
+        border: 1px solid #b2b2b2;
+        }
+
+        .contact-clean form textarea.form-control {
+        min-height: 100px;
+        max-height: 260px;
+        padding-top: 10px;
+        resize: vertical;
+        }
+
+        .contact-clean form .btn {
+        padding: 16px 32px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        text-shadow: none;
+        opacity: 0.9;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        outline: none !important;
+        }
+
+        .contact-clean form .btn:hover {
+        opacity: 1;
+        }
+
+        .contact-clean form .btn:active {
+        transform: translateY(1px);
+        }
+
+        .contact-clean form .btn-primary {
+        background-color: #055ada !important;
+        margin-top: 15px;
+        color: #fff;
+        }
+
+        .footer-basic {
+        padding: 40px 0;
+        background-color: #ffffff;
+        color: #4b4c4d;
+        }
+
+        .footer-basic ul {
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 0;
+        }
+
+        .footer-basic li {
+        padding: 0 10px;
+        }
+
+        .footer-basic ul a {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.8;
+        }
+
+        .footer-basic ul a:hover {
+        opacity: 1;
+        }
+
+        .footer-basic .social {
+        text-align: center;
+        padding-bottom: 25px;
+        }
+
+        .footer-basic .social > a {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        margin: 0 8px;
+        color: inherit;
+        opacity: 0.75;
+        }
+
+        .footer-basic .social > a:hover {
+        opacity: 0.9;
+        }
+
+        .footer-basic .copyright {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 13px;
+        color: #aaa;
+        margin-bottom: 0;
+        }
+
+        mb-0:hover {
+        text-decoration: none !important;
+        }
+
+        .faq-header {
+        text-decoration: none;
+        }
+
+        .faq-header:hover {
+        text-decoration: none !important;
+        }
+
+        .footer-clean {
+        padding: 50px 0;
+        background-color: #fff;
+        color: #4b4c4d;
+        }
+
+        .footer-clean h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: bold;
+        font-size: 16px;
+        }
+
+        .footer-clean ul {
+        padding: 0;
+        list-style: none;
+        line-height: 1.6;
+        font-size: 14px;
+        margin-bottom: 0;
+        }
+
+        .footer-clean ul a {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.8;
+        }
+
+        .footer-clean ul a:hover {
+        opacity: 1;
+        }
+
+        .footer-clean .item.social {
+        text-align: right;
+        }
+
+        @media (max-width:767px) {
+        .footer-clean .item {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        }
+
+        @media (max-width: 768px) {
+        .footer-clean .item.social {
+            text-align: center;
+        }
+        }
+
+        .footer-clean .item.social > a {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        margin-left: 10px;
+        margin-top: 22px;
+        color: inherit;
+        opacity: 0.75;
+        }
+
+        .footer-clean .item.social > a:hover {
+        opacity: 0.9;
+        }
+
+        @media (max-width:991px) {
+        .footer-clean .item.social > a {
+            margin-top: 40px;
+        }
+        }
+
+        @media (max-width:767px) {
+        .footer-clean .item.social > a {
+            margin-top: 10px;
+        }
+        }
+
+        .footer-clean .copyright {
+        margin-top: 14px;
+        margin-bottom: 0;
+        font-size: 13px;
+        opacity: 0.6;
+        }
+
+        .highlight-clean {
+        color: #313437;
+        background-color: #fff;
+        padding: 50px 0;
+        }
+
+        .highlight-clean p {
+        color: #7d8285;
+        }
+
+        .highlight-clean h2 {
+        font-weight: bold;
+        margin-bottom: 25px;
+        line-height: 1.5;
+        padding-top: 0;
+        margin-top: 0;
+        color: inherit;
+        }
+
+        .highlight-clean .intro {
+        font-size: 16px;
+        max-width: 500px;
+        margin: 0 auto 25px;
+        }
+
+        .highlight-clean .buttons {
+        text-align: center;
+        }
+
+        .highlight-clean .buttons .btn {
+        padding: 16px 32px;
+        margin: 6px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        text-shadow: none;
+        opacity: 0.9;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        outline: none;
+        background-color: #ddd;
+        }
+
+        .highlight-clean .buttons .btn:hover {
+        opacity: 1;
+        }
+
+        .highlight-clean .buttons .btn:active {
+        transform: translateY(1px);
+        }
+
+        .highlight-clean .buttons .btn-primary {
+        background-color: #055ada;
+        color: #fff;
+        }
+
+        .highlight-phone {
+        color: #313437;
+        background-color: #eef4f7;
+        padding: 50px 0 55px;
+        overflow: hidden;
+        }
+
+        @media (max-width:767px) {
+        .highlight-phone {
+            text-align: center;
+        }
+        }
+
+        .highlight-phone p {
+        color: #7d8285;
+        }
+
+        .highlight-phone h2 {
+        font-weight: bold;
+        margin-bottom: 35px;
+        line-height: 1.5;
+        padding-top: 0;
+        margin-top: 0;
+        color: inherit;
+        }
+
+        .highlight-phone .intro {
+        font-size: 18px;
+        max-width: 500px;
+        line-height: 1.5;
+        }
+
+        @media (max-width:767px) {
+        .highlight-phone .intro {
+            max-width: none;
+        }
+        }
+
+        .highlight-phone .intro p {
+        margin-bottom: 35px;
+        }
+
+        .highlight-phone .intro .btn {
+        padding: 16px 32px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        text-shadow: none;
+        opacity: 0.9;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+        line-height: 1;
+        }
+
+        .highlight-phone .intro .btn:hover {
+        opacity: 1;
+        }
+
+        .highlight-phone .intro .btn:active {
+        transform: translateY(1px);
+        }
+
+        .highlight-phone .intro .btn-primary {
+        background-color: #055ada;
+        color: #fff;
+        }
+
+        .highlight-phone .phone-mockup {
+        position: relative;
+        max-width: 260px;
+        margin-top: -30px;
+        margin-bottom: -230px;
+        transform: rotate(-15deg);
+        }
+
+        .highlight-phone .phone-mockup img.device {
+        width: 100%;
+        height: auto;
+        }
+
+        .highlight-phone .phone-mockup .screen {
+        position: absolute;
+        width: 94%;
+        height: 91%;
+        top: 1%;
+        left: 3%;
+        border: 1px solid #444;
+        border-radius: 20px;
+        background-color: #aaa;
+        overflow: hidden;
+        background: url(../../assets/img/screen-content-phone.jpg);
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        }
+
+        .highlight-phone .phone-mockup .screen:before {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 70%;
+        height: 140%;
+        top: -6%;
+        right: -60%;
+        transform: rotate(-19deg);
+        opacity: 0.2;
+        }
+
+        .navigation-clean-button {
+        background: #fff;
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        color: #333;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        margin-bottom: 0;
+        }
+
+        @media (min-width:768px) {
+        .navigation-clean-button {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        }
+
+        .navigation-clean-button .navbar-brand {
+        font-weight: bold;
+        color: inherit;
+        }
+
+        .navigation-clean-button .navbar-brand:hover {
+        color: #222;
+        }
+
+        .navigation-clean-button .navbar-toggler {
+        border-color: #ddd;
+        }
+
+        .navigation-clean-button .navbar-toggler:hover, .navigation-clean-button .navbar-toggler:focus {
+        background: none;
+        }
+
+        .navigation-clean-button .navbar-toggler {
+        color: #888;
+        }
+
+        .navigation-clean-button .navbar-collapse, .navigation-clean-button .form-inline {
+        border-top-color: #ddd;
+        }
+
+        .navigation-clean-button .navbar-nav a.active, .navigation-clean-button .navbar-nav > .show > a {
+        background: none;
+        box-shadow: none;
+        }
+
+        .navigation-clean-button.navbar-light .navbar-nav a.active, .navigation-clean-button.navbar-light .navbar-nav a.active:focus, .navigation-clean-button.navbar-light .navbar-nav a.active:hover {
+        color: #8f8f8f;
+        box-shadow: none;
+        background: none;
+        pointer-events: none;
+        }
+
+        .navigation-clean-button.navbar .navbar-nav .nav-link {
+        padding-left: 18px;
+        padding-right: 18px;
+        }
+
+        .navigation-clean-button.navbar-light .navbar-nav .nav-link {
+        color: #465765;
+        }
+
+        .navigation-clean-button.navbar-light .navbar-nav .nav-link:focus, .navigation-clean-button.navbar-light .navbar-nav .nav-link:hover {
+        color: #37434d !important;
+        background-color: transparent;
+        }
+
+        .navigation-clean-button .navbar-nav > li > .dropdown-menu {
+        margin-top: -5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,.1);
+        background-color: #fff;
+        border-radius: 2px;
+        }
+
+        .navigation-clean-button .dropdown-menu .dropdown-item:focus, .navigation-clean-button .dropdown-menu .dropdown-item {
+        line-height: 2;
+        font-size: 14px;
+        color: #37434d;
+        }
+
+        .navigation-clean-button .dropdown-menu .dropdown-item:focus, .navigation-clean-button .dropdown-menu .dropdown-item:hover {
+        background: #eee;
+        color: inherit;
+        }
+
+        .navigation-clean-button .actions .login {
+        margin-right: 1rem;
+        text-decoration: none;
+        color: #465765;
+        }
+
+        .navigation-clean-button .navbar-text .action-button, .navigation-clean-button .navbar-text .action-button:active, .navigation-clean-button .navbar-text .action-button:hover {
+        background: #56c6c6;
+        border-radius: 20px;
+        font-size: inherit;
+        color: #fff;
+        box-shadow: none;
+        border: none;
+        text-shadow: none;
+        padding: .5rem 1rem;
+        transition: background-color 0.25s;
+        font-size: inherit;
+        }
+
+        .navigation-clean-button .navbar-text .action-button:hover {
+        background: #66d7d7;
+        }
+
+        .social-icons {
+        color: #313437;
+        background-color: #fff;
+        text-align: center;
+        padding: 70px 0;
+        }
+
+        @media (max-width:767px) {
+        .social-icons {
+            padding: 50px 0;
+        }
+        }
+
+        .social-icons i {
+        font-size: 32px;
+        display: inline-block;
+        color: #757980;
+        margin: 0 10px;
+        width: 60px;
+        height: 60px;
+        border: 1px solid #c8ced7;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 60px;
+        }
+
+    </style>
+    <link rel="icon" href="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/deploy/ez-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+<body>
+    {% include  "includes/navbar.html"%}
+    <section class="article-clean">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family: Ubuntu, sans-serif;">Veri Setinin Hazırlanması<br></h1>
+                    </div>
+                    <div class="text">
+                        <p style="font-family: Poppins, sans-serif;">Başvuru aşamasından sonra projemizi bölge finallerine hazırlamak amacıyla geliştirmeye devam ederken veri setimizi temizledik ve küçülttük. Dolayısıyla işlemesi daha kolay hale gelen veri setimizde dönemler ve eğilimler, yüzyıllar ve şairler daha eşit dağılmış ve bununla birlikte eğiteceğimiz modelimizin doğruluk (accuracy) oranını arttırmış olduk.<br></p>
+                        <p style="font-family: Poppins, sans-serif;"><strong>Kaynakça:&nbsp;</strong>Büyük Türk Şiiri Antolojisi 1, Büyük Türk Şiiri Antolojisi 2, Abdülhak Hamit Tarhan Antolojisi, Tevfik Fikret Antolojisi, Çağdaş Türk Edebiyatında 199 Şairden 199 Şiir Antolojisi, Çağdaş Türk Şiiri Antolojisi - Cilt 1, Çağdaş Türk Şiiri Antolojisi - Cilt 2<br></p>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family: Ubuntu, sans-serif;">Veri Setinin Özellikleri<br></h1>
+                    </div>
+                    <div class="text">
+                        <p style="font-family: Poppins, sans-serif;">Edebî Zekâ'nın eğitiminde kullandığımız veri setimiz tamı tamına 66278 dizeyi, 16 farklı edebi dönemi ve eğilimi, 59 adet şairi ve 2 yüzyılı kapsamaktadır!<br></p>
+                        <p style="font-family: Poppins, sans-serif;"><strong>Veri Setimizde Bulunan Edebi Dönemler ve Eğilimler:&nbsp;</strong>Tanzimat, Servetifünun, Fecri Ati, 1923-1960 Arası Toplumcu Serbest Şiir, Hececiler, Hisarcılar, Maviciler, Milli Edebiyat Anlayışını Yansıtan Şiir, Cumhuriyet Dönemi Saf Şiir, 1960 Sonrası Toplumcu Şiir, 1980 Sonrası Şiir, Garip Şiir, Metafizik Anlayışını Öne Çıkaran Şiir, Milli Edebiyat, İkinci Yeni, Yedi Meşaleciler<br></p>
+                        <p style="font-family: Poppins, sans-serif;"><strong>Veri Setimizde Bulunan Şairler:&nbsp;</strong>Edip Cansever, Turgut Uyar, Cemal Süreya, Ece Ayhan, Sezai Karakoç, Oktay Rıfat, Melih Cevdet Anday, Orhan Veli Kanık, Halit Fahri Ozansoy, Faruk Nafiz Çamlıbel, Mehmet Akif Ersoy, Yahya Kemal, Mehmet Emin Yurdakul, Ziya Gökalp, Ahmet Haşim, Süleyman Nazif, Cenap Şahabettin, Tevfik Fikret, Recaizade Mahmud Ekrem, Ziya Paşa, Abdülhak Hamit Tarhan, Namık Kemal, İbrahim Şinasi, Murathan Mungan, Enis Batur, Haydar Ergülen, Ahmet Arif, İsmet Özel, Ataol Behramoğlu, Yavuz Bülent Bakiler, Mehmet Çınarlı, Erdem Beyazıt, Cahit Zarifoğlu, Arif Nihat Asya, Kemalettin Kamu, Orhan Şaik Gökyay, Ahmet Kutsi Tecer, Attila İlhan, Ceyhun Atuf Kansu, Nazım Hikmet, Ziya Osman Saba, Özdemir Asaf, Cahit Sıtkı Tarancı, Ahmet Hamdi Tanpınar, Necip Fazıl Kısakürek, Yusuf Ziya Ortaç, Orhan Seyfi Orhon, Enis Behiç Koryürek, Ali Canip Yöntem, İlhan Geçer, Bekir Sıtkı Erdoğan, Halide Nusret Zorlutuna, Mehmet Akif İnan, Ebubekir Eroğlu, İbrahim Tenekeci, Murat Menteş, Nuri Pakdil, Cahit Külebi, Fazıl Hüsnü Dağlarca<br></p>
+                        <p style="font-family: Poppins, sans-serif;"><strong>Veri Setimizde Bulunan Yüzyıllar:&nbsp;</strong>19. yüzyıl ve 20. yüzyıl (1900-1950 arası 1. yarı, 1950-2000 arası 2. yarı olmak üzere ikiye ayrılmış bir şekilde)<br></p>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family: Ubuntu, sans-serif;">Veri Setine Ait Grafikler ve Sayılar<br></h1>
+                    </div>
+                    <div class="text">
+                        <figure class="figure"><img class="img-fluid figure-img" src="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/main/web-site/graphs/bolgesel-donem-ve-egilim.png">
+                            <figcaption class="figure-caption" style="font-family: Poppins, sans-serif;">1 - Kullanılan Veri Setindeki Dönem ve Eğilim Dağılımı<br></figcaption>
+                        </figure>
+                        <p style="font-family: Poppins, sans-serif;">Veri setimizde en çok bulunan ilk üç dönem ve eğilim sırasıyla Milli Edebiyat, Metafizik Anlayışını Öne Çıkaran Şiir ve Cumhuriyet Dönemi Saf Şiir dönemleri ve eğilimleri iken en az bulunun son üç dönem ve eğilim sırasıyla Hececiler, Fecri Ati ve Yedi Meşaleciler dönemleri ve eğilimleridir.&nbsp;(Grafik 1)<br></p>
+                        <figure class="figure"><img class="img-fluid figure-img" src="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/main/web-site/graphs/bolgesel-yuzyil.png">
+                            <figcaption class="figure-caption" style="font-family: Poppins, sans-serif;">2 - Kullanılan Veri Setindeki Yüzyıl Dağılımı<br></figcaption>
+                        </figure>
+                        <p style="font-family: Poppins, sans-serif;">Veri setimizde bulunan yüzyıllar arasında 20. yüzyılın 2. yarısı en sık karşılaşılan zaman dilimi olurken 19. yüzyıl da en nadir karşılaşılan yüzyıl oldu.&nbsp;(Grafik 2)<br></p>
+                        <figure class="figure"><img class="img-fluid figure-img" src="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/main/web-site/graphs/bolgesel-sair1.png">
+                            <figcaption class="figure-caption" style="font-family: Poppins, sans-serif;">3.1 - Kullanılan Veri Setindeki Şair Dağılımı ve Şairlerin Dize Sayıları 1-10<br></figcaption>
+                        </figure>
+                        <figure class="figure"><img class="img-fluid figure-img" src="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/main/web-site/graphs/bolgesel-sair2.png">
+                            <figcaption class="figure-caption" style="font-family: Poppins, sans-serif;">3.2 - Kullanılan Veri Setindeki Şair Dağılımı ve Şairlerin Dize Sayıları 11-20<br></figcaption>
+                        </figure>
+                        <figure class="figure"><img class="img-fluid figure-img" src="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/main/web-site/graphs/bolgesel-sair3.png">
+                            <figcaption class="figure-caption" style="font-family: Poppins, sans-serif;">3.3 - Kullanılan Veri Setindeki Şair Dağılımı ve Şairlerin Dize Sayıları 21-30<br></figcaption>
+                        </figure>
+                        <figure class="figure"><img class="img-fluid figure-img" src="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/main/web-site/graphs/bolgesel-sair4.png">
+                            <figcaption class="figure-caption" style="font-family: Poppins, sans-serif;">3.4 - Kullanılan Veri Setindeki Şair Dağılımı ve Şairlerin Dize Sayıları 31-40<br></figcaption>
+                        </figure>
+                        <figure class="figure"><img class="img-fluid figure-img" src="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/main/web-site/graphs/bolgesel-sair5.png">
+                            <figcaption class="figure-caption" style="font-family: Poppins, sans-serif;">3.5 - Kullanılan Veri Setindeki Şair Dağılımı ve Şairlerin Dize Sayıları 41-50<br></figcaption>
+                        </figure>
+                        <figure class="figure"><img class="img-fluid figure-img" src="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/main/web-site/graphs/bolgesel-sair6.png">
+                            <figcaption class="figure-caption" style="font-family: Poppins, sans-serif;">3.6 - Kullanılan Veri Setindeki Şair Dağılımı ve Şairlerin Dize Sayıları 51-59<br></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "includes/footer.html"%}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
