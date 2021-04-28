@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask.helpers import url_for
 from flask_sqlalchemy import SQLAlchemy
+from DeepChecker import correct_de, correct_ki, correct_mi
 import joblib
 
 app = Flask(__name__)
@@ -32,6 +33,7 @@ donem_kazanim = {"Tanzimat":"Osmanlı Devleti, Batı’nın Rönesans’la başl
 donem_cikarimi = {"19. yüzyıl":["Tanzimat"],
                         "20. yüzyılın 1. yarısı":["Cumhuriyet Dönemi Saf Şiir", "1923-1960 Arası Toplumcu Serbest Şiir", "Milli Edebiyat Anlayışını Yansıtan Şiir", "Servetifünun", "Fecri Ati", "Milli Edebiyat", "Hececiler", "Garip Şiiri"],
                         "20. yüzyılın 2. yarısı":["1923-1960 Arası Toplumcu Serbest Şiir", "Maviciler", "İkinci Yeni", "Metafizik Anlayışını Öne Çıkaran Şiir", "Hisarcılar", "1960 Sonrası Toplumcu Şiir", "1980 Sonrası Şiir", "Garip Şiiri"]}
+
 poet_info = {
             "Abdülhak Hamit Tarhan":["Tanzimat", "19. yüzyıl", "(2 Ocak 1852, Beşiktaş - 12 Nisan 1937, İstanbul), Türk şair, oyun yazarı, diplomat.", "Sahra (1878), Makber (1885), Ölü (1886), Hacle (1887), Bir Sefilenin Hasbihali (1886), Bâlâ’dan Bir Ses (1911), Validem (1913), İlham-ı Vatan (1918), Tayflar Geçidi (1919), Garâm (1923), Kürsî-i İstiğrak, Bunlar O'dur (1885), Divaneliklerim yahut Belde (1885), Külbe-i İştiyak,Elveda Diyemedik"],
             "Abdülkadir Budak":["1980 Sonrası Şiir", "20. yüzyılın 2. yarısı", "Abdülkadir Budak, Türk şair.", "Düşmanların Aşkı (1969), Geçti İlkyaz Denemesi (1978), Şimdi Yaz (1980), Gömleğim Leyla Desenli (1981), Sevdanın Son Keremi (1985), İmzası Gül (1993)"],
@@ -247,6 +249,39 @@ def yuzyil_tahmin_et():
     db.session.commit()
 
     return render_template("siirde-yuzyil-tahmini.html", prediction="Edebî Zekâ'nın Tahmini: " + output, era_headline = output + " ile Kesişen Edebi Dönemler ve Eğilimler", eras = str(donemler).replace("[", "").replace("'", "").replace("]", ""), poet_headline = output + " Diliminde Eser Veren Şairler", poets = str(sairler).replace("[", "").replace("'", "").replace("]", ""), error_message="Edebî Zekâ'nın hatalı tahminde bulunduğunu mu düşünüyorsun? Bize bildir!")
+
+@app.route("/siirde-baglac-ve-edat-kontrolu")
+def siirde_baglac_ve_edat_kontrolu():
+    return render_template("siirde-baglac-ve-edat-kontrolu.html")
+
+@app.route("/siirde-baglac-ve-edat-kontrolu", methods=["POST"])
+def baglac_ve_edat_kontrol_et():
+    dize = request.form["baglac_ve_edat_kontrolu_dize"]
+    if correct_de(dize) == dize:
+        de_dogru_mu_bool = True
+        de_dogru_hali = None
+    
+    else:
+        de_dogru_mu_bool = False
+        de_dogru_hali = correct_de(dize)
+
+    if correct_ki(dize) == dize:
+        ki_dogru_mu_bool = True
+        ki_dogru_hali = None
+    
+    else:
+        ki_dogru_mu_bool = False
+        ki_dogru_hali = correct_ki(dize)
+
+    if correct_mi(dize) == dize:
+        mi_dogru_mu_bool = True
+        mi_dogru_hali = None
+    
+    else:
+        mi_dogru_mu_bool = False
+        mi_dogru_hali = correct_ki(dize)
+
+    return render_template("siirde-baglac-ve-edat-kontrolu.html", de_dogru_mu_bool=de_dogru_mu_bool, de_dogru_hali=de_dogru_hali, ki_dogru_mu_bool=ki_dogru_mu_bool, ki_dogru_hali=ki_dogru_hali, mi_dogru_mu_bool=mi_dogru_mu_bool, mi_dogru_hali=mi_dogru_hali, dize="Dize: " + dize)
 
 @app.route("/veri-seti-basvuru")
 def veri_seti_basvuru():
