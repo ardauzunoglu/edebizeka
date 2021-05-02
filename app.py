@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from flask.helpers import url_for
 from flask_sqlalchemy import SQLAlchemy
-from DeepChecker import correct_de, correct_ki, correct_mi
 import joblib
 
 app = Flask(__name__)
@@ -256,40 +255,7 @@ def yuzyil_tahmin_et():
     db.session.commit()
 
     return render_template("siirde-yuzyil-tahmini.html", prediction="Edebî Zekâ'nın Tahmini: " + output, era_headline = output + " ile Kesişen Edebi Dönemler ve Eğilimler", eras = str(donemler).replace("[", "").replace("'", "").replace("]", ""), poet_headline = output + " Diliminde Eser Veren Şairler", poets = str(sairler).replace("[", "").replace("'", "").replace("]", ""), error_message="Edebî Zekâ'nın hatalı tahminde bulunduğunu mu düşünüyorsun? Bize bildir!")
-
-@app.route("/siirde-baglac-ve-edat-kontrolu")
-def siirde_baglac_ve_edat_kontrolu():
-    return render_template("siirde-baglac-ve-edat-kontrolu.html")
-
-@app.route("/siirde-baglac-ve-edat-kontrolu", methods=["POST"])
-def baglac_ve_edat_kontrol_et():
-    dize = request.form["baglac_ve_edat_kontrolu_dize"]
-    if correct_de(dize) == dize:
-        de_dogru_mu_bool = True
-        de_dogru_hali = None
-    
-    else:
-        de_dogru_mu_bool = False
-        de_dogru_hali = correct_de(dize)
-
-    if correct_ki(dize) == dize:
-        ki_dogru_mu_bool = True
-        ki_dogru_hali = None
-    
-    else:
-        ki_dogru_mu_bool = False
-        ki_dogru_hali = correct_ki(dize)
-
-    if correct_mi(dize) == dize:
-        mi_dogru_mu_bool = True
-        mi_dogru_hali = None
-    
-    else:
-        mi_dogru_mu_bool = False
-        mi_dogru_hali = correct_ki(dize)
-
-    return render_template("siirde-baglac-ve-edat-kontrolu.html", de_dogru_mu_bool=de_dogru_mu_bool, de_dogru_hali=de_dogru_hali, ki_dogru_mu_bool=ki_dogru_mu_bool, ki_dogru_hali=ki_dogru_hali, mi_dogru_mu_bool=mi_dogru_mu_bool, mi_dogru_hali=mi_dogru_hali, dize="Dize: " + dize)
-
+  
 @app.route("/veri-seti-basvuru")
 def veri_seti_basvuru():
     return render_template("veri-seti-basvuru.html")
