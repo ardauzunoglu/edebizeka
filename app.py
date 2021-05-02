@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask.helpers import url_for
 from flask_sqlalchemy import SQLAlchemy
+from DeepChecker import correct_de, correct_ki, correct_mi
 import joblib
 
 app = Flask(__name__)
@@ -47,7 +48,7 @@ poet_info = {
             "Ali Cengizkan":["1980 Sonrası Şiir", "20. yüzyılın 2. yarısı", "Ali Cengizkan, Türk şair ve yazar. ", "Senlere (1980) Çocuk Ömrümüz (1982), Yunan Dosyası (1983), Yürüyüşler ve Duruşlar (1984), Bağımlı Şiir (1986)"],
             "Arif Nihat Asya":["Milli Edebiyat Anlayışını Yansıtan Şiir", "20. yüzyılın 1. yarısı", "(7 Şubat 1904, Çatalca, İstanbul - 5 Ocak 1975, Ankara), “Bayrak Şairi” olarak tanınır. Önce aruzu kullanmış daha sonra heceye geçmiş, serbest şiirler de yazmıştır. Dini, milli duyguları, kahramanlıkları şiirleştirmiştir.", "Bir Bayrak Rüzgar Bekliyor, Heykeltıraş, Yastığımın Rüyası, Kıbrıs Rubaileri, Rubaiyatt-ı Arif, Avrupa’dan Rubailer, Ses ve Toprak, Köprü, Kökler ve Dallar, Dualar ve Aminler, Aynalarda Kalan"],
             "Ataol Behramoğlu":["1960 Sonrası Toplumcu Şiir", "20. yüzyılın 2. yarısı", "(D. 13 Nisan 1942, Çatalca), İsmet Özel’le “Halkın Dostları”, Nihat Behram’la “Militan” dergilerini çıkarmış ve bu dergilerin yöneticiliğini yapmıştır.", "Bir Ermeni General, Bir Gün Mutlaka (Bütün şiirleri- 1), Yaşadıklarımdan Öğrendiğim Bir Şey Var (Bütün şiirleri- 2), Kızıma Mektuplar (Bütün şiirleri- 3), Yolculuk Özlem Cesaret ve Kavga Şiirleri, Kuşatmada, Mustafa Suphi Destanı, Dörtlükler, Ne Yağmur... Ne Şiirler."],
-            "Attila İlhan":["Maviciler", "20. yüzyılın 2. yarısı", "15 Haziran 1925 - 10 Ekim 2005), Şair, romancı, senarist, düşünce adamıdır. Garip ve İkinci Yeni anlayışına karşı çıkmıştır.", "Duvar, Sisler Bulvarı, Yağmur Kaçağı, Ben Sana Mecburum, Yasak Sevişmek, Bela Çiçeği, Tutkunun Günlüğü, Böyle Bir Sevmek, Elde Var Hüzün, Korkunun Krallığı, Ayrılık Sevdaya Dahil, Kimi Sevsem Sensin"],
+            "Attila İlhan":["Maviciler", "20. yüzyılın 2. yarısı", "(15 Haziran 1925 - 10 Ekim 2005), Şair, romancı, senarist, düşünce adamıdır. Garip ve İkinci Yeni anlayışına karşı çıkmıştır.", "Duvar, Sisler Bulvarı, Yağmur Kaçağı, Ben Sana Mecburum, Yasak Sevişmek, Bela Çiçeği, Tutkunun Günlüğü, Böyle Bir Sevmek, Elde Var Hüzün, Korkunun Krallığı, Ayrılık Sevdaya Dahil, Kimi Sevsem Sensin"],
             "Behçet Kemal Çağlar":["Milli Edebiyat Anlayışını Yansıtan Şiir", "20. yuüzyılın 1. yarısı", "Behçet Kemal Çağlar, Türk şair. Faruk Nafiz Çamlıbel ile birlikte Onuncu Yıl Marşı'nı yazmıştır.", "Erciyes'ten Kopan Çığ, Burada Bir Kalp Çarpıyor, Benden İçeri"],
             "Bekir Sıtkı Erdoğan":["Hisarcılar", "20. yüzyılın 2. yarısı", "Bekir Sıtkı Erdoğan, Türk şair. Kuleli Askeri Lisesi'nden sonra 1948’de Kara Harp Okulunu bitirdi. Kıta subaylığı yaptı. Bu arada Ankara Üniversitesi Dil ve Tarih-Coğrafya Fakültesi'nden de mezun oldu. Heybeliada Deniz Lisesi, Özel Alman Lisesi ve Marmara Koleji'nde edebiyat öğretmenliği yaptı.", "Dostlar Başına (1965), Kışlada Bahar (1970), Kara Gözlüm Efkarlanma Gül Gayri (1963), Ve Ben Yalnız (1968)"],
             "Cahit Külebi":["Cumhuriyet Dönemi Saf Şiir", "20. yüzyılın 2. yarısı", "Şair (D. 1917, Çeltek köyü / Zile / Tokat - Ö. 20 Haziran 1997, Ankara). Tam adı Mahmut Cahit Külebi. Mahmut Cahit, Nazmi Cahit, Cahit Erencan imzalarını da kullandı. Niksar / Tokat Gazi Ahmet Danişment İlkokulunu (1929) ve Sivas Lisesini (1936) bitirdi. İstanbul Yüksek Öğretmen Okulu Türk Dili ve Edebiyatı Bölümünden (1940) mezun oldu.", "Atatürk Kurtuluş Savaşında (1952), Yeşeren Otlar (1955), Süt (1965), Türk Mavisi (1973), Yangın (1980)"],
@@ -208,7 +209,7 @@ def siirde_sair_tahmini():
     return render_template("siirde-sair-tahmini.html")
 
 @app.route("/siirde-sair-tahmini", methods=["POST"])
-ef sair_tahmin_et():
+def sair_tahmin_et():
     dize = request.form["sair_tahmini_dize"]
     predictor = "Şair"
     is_prediction = True
@@ -255,6 +256,39 @@ def yuzyil_tahmin_et():
     db.session.commit()
 
     return render_template("siirde-yuzyil-tahmini.html", prediction="Edebî Zekâ'nın Tahmini: " + output, era_headline = output + " ile Kesişen Edebi Dönemler ve Eğilimler", eras = str(donemler).replace("[", "").replace("'", "").replace("]", ""), poet_headline = output + " Diliminde Eser Veren Şairler", poets = str(sairler).replace("[", "").replace("'", "").replace("]", ""), error_message="Edebî Zekâ'nın hatalı tahminde bulunduğunu mu düşünüyorsun? Bize bildir!")
+
+@app.route("/siirde-baglac-ve-edat-kontrolu")
+def siirde_baglac_ve_edat_kontrolu():
+    return render_template("siirde-baglac-ve-edat-kontrolu.html")
+
+@app.route("/siirde-baglac-ve-edat-kontrolu", methods=["POST"])
+def baglac_ve_edat_kontrol_et():
+    dize = request.form["baglac_ve_edat_kontrolu_dize"]
+    if correct_de(dize) == dize:
+        de_dogru_mu_bool = True
+        de_dogru_hali = None
+    
+    else:
+        de_dogru_mu_bool = False
+        de_dogru_hali = correct_de(dize)
+
+    if correct_ki(dize) == dize:
+        ki_dogru_mu_bool = True
+        ki_dogru_hali = None
+    
+    else:
+        ki_dogru_mu_bool = False
+        ki_dogru_hali = correct_ki(dize)
+
+    if correct_mi(dize) == dize:
+        mi_dogru_mu_bool = True
+        mi_dogru_hali = None
+    
+    else:
+        mi_dogru_mu_bool = False
+        mi_dogru_hali = correct_ki(dize)
+
+    return render_template("siirde-baglac-ve-edat-kontrolu.html", de_dogru_mu_bool=de_dogru_mu_bool, de_dogru_hali=de_dogru_hali, ki_dogru_mu_bool=ki_dogru_mu_bool, ki_dogru_hali=ki_dogru_hali, mi_dogru_mu_bool=mi_dogru_mu_bool, mi_dogru_hali=mi_dogru_hali, dize="Dize: " + dize)
 
 @app.route("/veri-seti-basvuru")
 def veri_seti_basvuru():
