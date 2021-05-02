@@ -673,6 +673,9 @@
                         </div>
                         <div class="text">
                             <h2 style="text-align: center;margin: 40px 0px;font-family: Poppins, sans-serif;">{{prediction}}<br></h2>
+                            {% if is_prediction %}
+                                <img class="float-right" style="width: 12.5%;height: 12.5%; border: 1px solid black;" src="https://raw.githubusercontent.com/ardauzunoglu/edebizeka/main/web-site/Şairler/{{poet_image}}.jpg">
+                            {% endif %}
                             <h2 style="margin: 28px 0px;font-family: Quicksand, sans-serif;">{{headline}}<br></h2>
                             <p style="font-family: Poppins, sans-serif;"><strong>{{century_headline}}</strong>{{poet_age}}<br></p>
                             <p style="font-family: Poppins, sans-serif;"><strong>{{age_headline}}</strong>{{poet_century}}<br></p>
