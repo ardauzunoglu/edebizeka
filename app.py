@@ -208,9 +208,10 @@ def siirde_sair_tahmini():
     return render_template("siirde-sair-tahmini.html")
 
 @app.route("/siirde-sair-tahmini", methods=["POST"])
-def sair_tahmin_et():
+ef sair_tahmin_et():
     dize = request.form["sair_tahmini_dize"]
     predictor = "Şair"
+    is_prediction = True
 
     dize_for_pred = [dize]
     output = poet_model.predict(dize_for_pred)[0]
@@ -218,12 +219,18 @@ def sair_tahmin_et():
     poet_century = poet_info[output][1]
     poet_bio = poet_info[output][2]
     poems = poet_info[output][3]
+    
+    if len(output.split()) == 3:
+        poet_image = output.split()[0] + "%20"  + output.split()[1] + "%20" + output.split()[2]
+
+    elif len(output.split()) == 2:
+        poet_image = output.split()[0] + "%20"  + output.split()[1]
 
     new_insert = PredictionData(dize=dize, output=output, predictor=predictor)
     db.session.add(new_insert)
     db.session.commit()
 
-    return render_template("siirde-sair-tahmini.html", prediction="Edebî Zekâ'nın Tahmini: " + output, poet_age = poet_age, poet_century = poet_century, poet_bio = poet_bio, poems = poems, headline = "Şaire Ait Bilgiler", age_headline = "Şairin Eser Ürettiği Yüzyıl:", century_headline = "Şairin Eser Ürettiği Dönem veya Eğilim:", bio_headline = "Şairin Kısa Biyografisi:", poems_headline = "Şairin Önemli Şiirleri:", error_message="Edebî Zekâ'nın hatalı tahminde bulunduğunu mu düşünüyorsun? Bize bildir!")
+    return render_template("siirde-sair-tahmini.html", prediction="Edebî Zekâ'nın Tahmini: " + output, poet_age = poet_age, poet_century = poet_century, poet_bio = poet_bio, poems = poems, headline = "Şaire Ait Bilgiler", age_headline = "Şairin Eser Ürettiği Yüzyıl: ", century_headline = "Şairin Eser Ürettiği Dönem veya Eğilim: ", bio_headline = "Şairin Kısa Biyografisi: ", poems_headline = "Şairin Önemli Şiirleri: ", error_message="Edebî Zekâ'nın hatalı tahminde bulunduğunu mu düşünüyorsun? Bize bildir!", is_prediction=is_prediction, poet_image=poet_image)
 
 @app.route("/siirde-yuzyil-tahmini")
 def siirde_yuzyil_tahmini():
