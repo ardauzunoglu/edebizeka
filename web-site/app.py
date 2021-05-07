@@ -286,7 +286,7 @@ def baglac_ve_edat_kontrol_et():
     
     else:
         mi_dogru_mu_bool = False
-        mi_dogru_hali = correct_ki(dize)
+        mi_dogru_hali = correct_mi(dize)
 
     return render_template("siirde-baglac-ve-edat-kontrolu.html", de_dogru_mu_bool=de_dogru_mu_bool, de_dogru_hali=de_dogru_hali, ki_dogru_mu_bool=ki_dogru_mu_bool, ki_dogru_hali=ki_dogru_hali, mi_dogru_mu_bool=mi_dogru_mu_bool, mi_dogru_hali=mi_dogru_hali, dize="Dize: " + dize)
 
