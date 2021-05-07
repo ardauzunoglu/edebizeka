@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask.helpers import url_for
 from flask_sqlalchemy import SQLAlchemy
 from DeepChecker import correct_de, correct_ki, correct_mi
+from trnlp import SpellingCorrector
 import joblib
 
 app = Flask(__name__)
@@ -289,6 +290,45 @@ def baglac_ve_edat_kontrol_et():
         mi_dogru_hali = correct_mi(dize)
 
     return render_template("siirde-baglac-ve-edat-kontrolu.html", de_dogru_mu_bool=de_dogru_mu_bool, de_dogru_hali=de_dogru_hali, ki_dogru_mu_bool=ki_dogru_mu_bool, ki_dogru_hali=ki_dogru_hali, mi_dogru_mu_bool=mi_dogru_mu_bool, mi_dogru_hali=mi_dogru_hali, dize="Dize: " + dize)
+
+@app.route("/siirde-yazim-yanlisi-kontrolu")
+def siirde_yazim_yanlisi_kontrolu():
+    return render_template("siirde-yazim-yanlisi-kontrolu.html")
+
+@app.route("/siirde-yazim-yanlisi-kontrolu", methods=["POST"])
+def yazim_yanlisi_kontrol_et():
+    dize = request.form["yazim_yanlisi_kontrolu_dize"]
+    dize_list = dize.split()
+    obj = SpellingCorrector()
+    obj.settext(dize)
+    corrected = ""
+    harfler = ["a", "b", "c", "ç", "d", "e", "f", "g", "ğ", "h", "ı", "i", "j", "k", "l", "m", "n", "o", "ö", "p", "r", "s", "ş", "t", "u", "ü", "v", "y", "z"
+                "A", "B", "C", "Ç", "D", "E", "F", "G", "Ğ", "H", "I", "İ", "J", "K", "L", "M", "N", "O", "Ö", "P", "R", "S", "Ş", "T", "U", "Ü", "V", "Y", "Z"]
+
+    for element in dize_list:
+
+        if obj.correction(all=True)[dize_list.index(element)][0] == element:
+            corrected += obj.correction(all=True)[dize_list.index(element)][0]
+
+        else:
+            corrected += obj.correction(all=True)[dize_list.index(element)][0]
+
+        corrected += " "
+
+    corrected = corrected.capitalize()
+
+    if (corrected != dize) and (dize[-1] not in harfler):
+        corrected = corrected.split()
+        corrected[-1] += dize[-1]
+        corrected = " ".join(corrected)
+
+    if corrected.strip() == dize.strip():
+        is_corrected = False
+
+    else:
+        is_corrected = True
+        
+    return render_template("siirde-yazim-yanlisi-kontrolu.html", is_corrected=is_corrected, corrected=corrected, dize=dize)
 
 @app.route("/veri-seti-basvuru")
 def veri_seti_basvuru():
