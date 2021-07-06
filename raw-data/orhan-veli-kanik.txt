@@ -152,11 +152,6 @@ Yazip yazip bahçesine attigim mektuplari
 Gülmekten katilirdi, okudukça.
 Bense bugünmüs gibi utanirim
 O mektuplari hatirladikça.
-............................çikar
-............................durduk mahallede
-..........................................halde
-...........................adlarimiz yan yana yazilirdi duvarlara
-.......................................yangin yerlerinde.
 Dördüncüsü azgin bir kadin,
 Açik saçik seyler anlatirdi bana.
 Bir gün de önümde soyunuverdi
@@ -166,7 +161,6 @@ Besinciyi geçip altinciya geldim
 Onun adi da Nurünnisa.
 Ah güzelim
 Ah esmerim
-Ah
 Canimin içi Nurünnisa.
 Yedincisi Aliye, kibar bir kadin
 Ama ben pek varamadim tadina,
@@ -453,11 +447,6 @@ Kim bu, kim? alnımızdaki yazı:
 Gözlerinde günahının hazzı
 Gülüyor saz benizli bakire.
 
-Seni sevmek..Evet haklısın,kötü kızım. Suçluyum seni sevdiğim için Gece gündüz benim olman için ettiğim dualar Bir gecede olsa,rüyama girmen için
-Dilek ağacına bağladığım umutlar Döktüğüm gözyaşları sana olduğu için suçluyum ben...Hep terkedildiğim için İstenmesemde senden kopamadığım. Her türlü sözlere maruz kaldığım Ve sana güvendiğim için suçluyum ben...
-Doğru..zaten sen hep doğruyu söylersin Bir çocuk ne anlar sevmekten? Ne anlarki sevgi uğruna ölmekten Ne anlar yaşam nedir,dünya ne? Herşey tozpembedir onun gözünde
-Hep umut vardır o küçük yüreğinde... Karanlıkta aydınlık hisseder Olmayacak sevdaya olur der.. Ben de çocuğum ve cezalıyım... cezam sevilmemek Tek suçum ise seni be canım seni sevmek....
-
 Ah aydınlıklardan uzaktayım
 Kafamda o dağılmayan sükûn.
 Ölmedim lâkin, yaşamaktayım
@@ -525,7 +514,6 @@ Nasıl koşar aynalara,
 Bir cana hasret,
 Bilmezler.
 
-I
 Biliyorum, kolay değil yasamak,
 Gönül verip türkü söylemek yar üstüne;
 Yıldız ışığında dolaşıp geceleri,
@@ -534,7 +522,7 @@ Söyle bir fırsat bulup yarim gün,
 Yan gelebilmek Camlıca tepesine...
 -Bin turlu mavi akar Bogaz'dan-
 Her şeyi unutabilmek maviler içinde.
-II
+
 Biliyorum, kolay değil yasamak;
 Ama iste
 Bir ölünün hala yatağı sıcak,
@@ -549,22 +537,21 @@ Ağacımız da.
 Sen bize bulut ver sade
 Yüz paralık.
 
-I
 Ne kadar güzel şey;
 Yolun üstündeki bina
 Yıkıldığı zaman
 Bilinmeyen bir ufuk görmek.
-II
+
 Kaldırımın kenarına dizilip
 Bacası olan silindirin
 Yürüyüşünü seyreden
 Çocuklara imreniyorum.
-III
+
 Onun sesi
 Bir arkadaşıma
 Denizden geçen
 Motorları hatırlatıyor.
-IV
+
 Kırık taşlara bakıp
 Işıklı bir asfalt düşünmek
 Acaba yalnız
@@ -1028,22 +1015,21 @@ Hatırımdan bile geçmezdi
 Sana duyduklarımı söylemek.
 Acaba hala yasıyor musun?
 
-NİSAN
 İmkansız şey
 Şiir yazmak,
 Aşıksan eğer;
 Ve yazmamak,
 Aylardan Nisansa.
-ARZULAR VE HATIRALAR
+
 Arzular başka şey,
 Hatıralar başka.
 Güneşi görmeyen şehirde,
 Söyle, nasıl yaşanır?
-BÖCEKLER
+
 Düşünme,
 Arzu et sade!
 Bak, böcekler de öyle yapıyor.
-DAVET
+
 Bekliyorum
 Öyle bir havada gel ki,
 Vazgeçmek mümkün olmasın.
@@ -1290,12 +1276,11 @@ Fakat neden mavi gökyüzlerine
 Genişlerken ağustos böceklerinin sesi,
 Kuşlar yine onun türküsünü söyler?
 
-I
 Seyahat edildiği zamanlarda
 Yıldızlar konuşur
 Söyledikleri şeyler
 Ekseriya hüzünlüdür.
-II
+
 Sarhoş olunduğu akşamlar
 Islıkla çalınan şarkı
 Neşelidir.
@@ -1644,7 +1629,6 @@ Ruhları bir kus gibi avare kılan uyku.
 Dağılan içimde her zaman o baygın koku,
 Lezzeti dudağımda buğulasan şeftali.
 
-I
 Damlara bakan penceresinden
 Liman görünürdü
 Ve kilise çanları
@@ -1657,7 +1641,7 @@ Karsı apartmanda.
 Böyle olduğu halde
 Bu şehri bırakıp
 Başka şehre gitti.
-II
+
 Simdi kavak ağaçları görünüyor,
 Penceresinden,
 Kanal boyunca.
@@ -1913,22 +1897,3 @@ Böyle havalarda unuttum;
 Şiir yazma hastalığım
 Hep böyle havalarda nüksetti;
 Beni bu güzel havalar mahvetti.
-
-10.10.1948
-Neyse… Şiirlerimi soruyorsun. Henüz bir şey yok. Ama yakında olacağını sanıyorum. Yazdığım zaman önce sana gönderirim. Kitaplarımdan hiçbir iş çıkmadı. Saygılı Yosma’yı bastıramıyorum. Antigione’nin müsveddesi Ertuğrul Muhsin’de. Sana gönderebilecek duruma gelince onu da yollarım. Oktay (Rifat) ’ın piyesi hakkındaki yazıyı Varlık’ta neşretmek meselesine gelince, Yaşar Nabi’ye gösterdim. Neşretmek istemedi. Ben de bundan sonra Varlık’a yazmamaya karar verdim. Aynı şekilde Sait Faik de yazmayacak.“
-07.09.1950
-Şu anda sıkıntıdan çok üstün bir halet içindeyim: Hüzün! Çok hüzünlüyüm. Mamafih memnunum bu halden. Hiç olmazsa sıkıntılarımı unutuyorum. Hani senin iğne nazariyen vardır: Başağrısını geçirmek için iğne batırmak. Bu da öyle bir şey. Bu halimi iki bardak şarap içebilmiş olmaya borçluyum… Çok içtiğimden şikayet ediyordun. Çok içmeme imkân var mı. Ancak bulursam içiyorum…
-Sen, Dora’dan aldığın parayla bir piyango bileti satın al. Belki bir şey çıkar. Bunu, halimin vaktimin iyi olduğundan söylüyorum sanma. Vaziyetim berbat. Mesela bu mektubu postayla gönderemeyeceğim herhalde. Bugün Dora’yı arayacağım. O yarın sabah Ankara’ya gidiyor, onunla göndermeye çalışacağım. Vaziyetimin kötülüğüne bir misal daha vereyim: Burada fena halde yağmurlar başladı. Tam bir kış havası. Buna rağmen benim değil pardesüm, ceketim bile yok. Yağmur altında dün gömlekle dolaştım. Üşüdüğümden çok, utanıyorum.
-
-İşsizlik kötü şey vesselam. İşsizliğin kötü olduğunu da yalnız aç kaldığım zamanlar, düşünüyorum. Can sıkıntısından bunaldığım sıralarda da düşünsem ya. Olmuyor. Bu bahçeye de hep böyle zamanlarımda gelirim. Neden acaba? Etraftakilerin de çoğu işsiz.
-Bu bahçe sadece kaderleri bu yolda ortak olanları mı çekiyor dersiniz. Olabilir. Vakit öğleyi geçiyor. Açlıktan bahsettim ama pek de aç değilim. Bununla beraber, neden bilmem, etrafımdakilerden utanıyorum. Herkesin yemeğe gittiği bir saatte benim, parasız pulsuz buralarda dolaşmam bir suçmuş gibi geliyor bana. Boş sıralardan birine oturdum; düşünmeye başladım. Bereket versin sigaram var. O da olmasa felaket.
-Bilmem ne dağındaki petrol arama kampında bir iş teklifi etmişlerdi. Gitseydim kötü mü olurdu sanki. Enayilik işte, parayla pulla değil ki. Bir odam olurdu, hiç olmazsa; ev kirası düşünmezdim. Sabahları acı kahvemi içebilir, öğle, akşam yemeklerini kampın tabldotundan yiyebilirdim. Tabldotu düşünür düşünmez karnım guruldamaya başladı, demek acıkmıştım. Şu yemek denilen şey de tuhaf bir şey. İnsanlar neler icat etmişler! Düpedüz ot yemek, yahut çiğ çiğ et yemek dururken, neler çıkarmışlar ortaya! Balığı denizden tutacaksın. Başka çeşidi olursa olmaz, levrek olacak. Ateşi yakacaksın, suyu kaynatacaksın, levreği içine atacaksın, haşlandıktan sonra çıkaracaksın, bir tabağa koyacaksın, soğutacaksın, başka bir kabın içine tavuktan çıkan yumurtayı kıracaksın, başlayacaksın çalkalamaya, yumurta hep aynı tarafa doğru çalkalanacak, bir yandan ince ince zeytinyağı dökeceksin, zeytinyağı iplik gibi dökülecek. Zeytinyağının da hikâyesi ayrı Zeytini daldan koparacaksın, ezeceksin, yağını alacaksın. Mutlaka zeytin olacak. Fındık olsa olmaz, susam olsa olmaz, pamuk olsa olmaz, zeytin. Zeytinyağı iplik gibi dökülecek. Yumurtayla zeytinyağı kıvamını bulunca bir kaşıkla onu soğumuş levreğin üstüne gezdireceksin. Oldu mu sana mayonezli levrek? Kim bilir belki de olmadı. Olmazsa olmasın, ahçı değilim ya.
-Mayonezli levreğin de ne hoş bir kokusu vardır! Acı cevize benzer. Lezzetle kokunun birbirine benzediğini de ilk defa düşünüyorum. Hem, birader, nene lâzım senin mayonezli levrek? Onu düşüneceğine ekmek düşünsene! Oh, canım ekmek! Sıcak ekmek! Taze ekmek! Yeni çıkarken ne güzel kokar fırınların önü! Fırından yeni çıkmış ekmek ne güzel yakar insanın elini!
-Evet, petrol kampına gitmeliydim. Gerçi şehirden, tanıdıklardan uzak kalacaktım. Ama ne çıkar? Orada da ahbaplar bulamaz mıydım? Bir petrol kampında ne gibi ahbaplar bulunabilir, şimdi de onu düşünüyorum. Mesela Amerikalı bir mühendis bulunabilir. Mesela Teksaslıdır. Macera dolu bir hayatı vardır. Kimse bilmez. Jeoloji kaidelerine göre bir yerde petrol damarına rastlamak gerekir; araştırmalara girişilir; yıllarca uğraşılır, bir şey çıkmaz; petrol, yüzyıllarca evvel, oradan kaçmış; başka yere gitmiştir. Buna karşılık hiç umulmadık bir yerden de günün birinde petrol çıkıverir. İnsan bütün ömrünü bir hayal peşinde tüketebilir yahut bir anda zengin olabilir. Petrol, büyük bir at yarışıdır. Macera işidir, kumar işidir. Hayatı macerayla dolu Teksaslı da bir kumarbazdır. İhtimal içki de içer. İçki ile kumara fazla düşkün insanların karıları biraz uçarı olur. İhtimal... Neyse, geçelim bunları. Ağzı biraz içki kokan, tütün kokan, günün birinde bir kumar masasından milyonlar vurarak kalkacak bir erkeğin de, bir kadın için; çekici tarafı yok mu? Ama Teksaslı kimden vuracak milyonu? Bizden mi? Kondu öyleyse yağlı kuyruğa. “Ulan, a kerata! Kumar düşüneceğine karnını doyur! ” dese haksız mı?
-Bir kundura, boyacısı geldi, gözü ayakkaplarımda, “boyayalım, beyim! ” dedi. “Eşşoğlu eşek! Ben şimdi boya mı düşünüyorum? Çek bakalım arabanı şuradan” diyecektim, diyemedim. Kibarlığım bırakmadı. “Hayır, kardeşim, istemez” diye tatlıya bağladım.
-İhtimal başka ahbaplar da bulurdum petrol kampında. Mesela, yaşlı bir muhasebeci. Biraz alaturka, biraz ehlikeyf, hayvan meraklısı bir adam. Mesela, kedi besler. Kedisinin bir adı vardır. Mesela, Pamuk. Ya kendi adı? Kendi adı Ethem Bey olmalı. Ethem Bey'in aksine pek alafranga bir de genç bulunmalı kampta. Mevkii şef olmalı. İngilizce bilmeli. Ethem Bey'e inat, Erdoğan köpek beslemeli. Erdoğan da kim? Ha! Erdoğan da işte o gencin adı. Köpeğinin de bir adı olmalı. Ne olmalı? Ethem Bey'e inat, alafranga bir isim. Mesela Robinson. Gerçi petrol kampından deniz görünmez. Ama ne çıkar, köpeğin adı Robinson olsun.
-Erdoğan biraz şiirle uğraşmalı. Yazmamalı da konuşmalı. Ara sıra mısralar okumalı. Ne iyi olurdu! Onunla hep şiirden söz açardık. O, ihtimal, giyimi kuşamıyla modern bir genç olmasına rağmen, kafasıyla bir hayli eski olacaktı. Mesela, şair olarak Haşim'i severdi. Hatta Haşim'i sevmeyi bir ilerilik bile sayabilirdi. O bana “Şiirle maddenin bağdaşmayacağını, şiirin görünmez parmakların içimizdeki tellerden çıkardığı ilahi nağmeler olduğunu” söylerdi. Zavallı ben, bu sözlerle ne demek istediğini sormaya bile cesaret edemezdim. Onun inancını sarsmaya gücüm yetmezdi ki. Ama ne olursa olsun, bütün softalar gibi, bu delikanlının da sevimli tarafları olabilirdi. Kendisini öğrendiklerinden geçirmeye gücüm yetmeyeceğini bildiğim halde onunla şiir tartışmalarına tutulmaktan da alamazdım. Benim şair 
-Gemliğe doğru
-Denizi göreceksin;
-Sakın şaşırma.
-
