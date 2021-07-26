@@ -1,2 +1,2 @@
 # Edebi Zeka
-README.md is being updated. Stay tuned folks!
+![alt text](https://github.com/ardauzunoglu/edebizeka/blob/main/web-site/ez.png?raw=true)
