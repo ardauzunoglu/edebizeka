@@ -6,7 +6,7 @@ from trnlp import SpellingCorrector
 import joblib
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://hupddegoewnnjl:1c3347df1576691bbf0f62229def1424a255337b6ee7236661a4e495a5401013@ec2-34-247-118-233.eu-west-1.compute.amazonaws.com:5432/dcvppo5ei1tbsq"
+app.config["SQLALCHEMY_DATABASE_URI"] = ""
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
