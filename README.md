@@ -8,7 +8,7 @@ Edebi Zeka, **modern Türk edebiyatı** sınırları içerisinde yer alan dönem
 
 Edebi Zeka, *Scikit-Learn*, *nltk*, *Pandas* ve *numpy* kullanılarak geliştirilmiştir. Geliştirilen yapay zekâ modelleri *Flask* kütüphanesi ile geliştirilen internet sayfasına entegre edilerek kullanıma açılmıştır.
 
-Edebi Zeka'nın geliştirilmesinde kullanılan veri setleri 1839 - 2000 yılları arası modern Türk şiirini kapsamaktadır. Bu bağlamda veri setlerin 16 dönem ve eğilim, 93 şair ve 3 zaman dilimi yer almaktadır. 
+Edebi Zeka'nın geliştirilmesinde kullanılan veri setleri 1839 - 2000 yılları arası modern Türk şiirini kapsamaktadır. Bu bağlamda veri setlerinde 16 dönem ve eğilim, 93 şair ve 3 zaman dilimi yer almaktadır. 
 
 [Veri Setine Dair Her Şey](https://edebizeka.herokuapp.com/veri-seti-turkiye)
 
